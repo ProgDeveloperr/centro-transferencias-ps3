@@ -1,0 +1,561 @@
+.resiliencia-panel {
+    display:
+        grid;
+
+    gap:
+        18px;
+}
+
+
+.resiliencia-panel__cabecera {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        18px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+.resiliencia-panel__estado-general {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    min-height:
+        34px;
+
+    padding:
+        6px 11px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.18);
+
+    border-radius:
+        999px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.04em;
+}
+
+
+.resiliencia-panel__estado-general::before {
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    border-radius:
+        50%;
+}
+
+
+.resiliencia-panel__estado-general--saludable::before {
+    background:
+        #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.12);
+}
+
+
+.resiliencia-panel__estado-general--atencion::before {
+    background:
+        #f59e0b;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(245, 158, 11, 0.12);
+}
+
+
+.resiliencia-panel__estado-general--incidente::before {
+    background:
+        #ef4444;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 68, 68, 0.12);
+}
+
+
+.resiliencia-panel__metricas {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            6,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        10px;
+}
+
+
+.resiliencia-panel__metrica {
+    min-width:
+        0;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(148, 163, 184, 0.04);
+}
+
+
+.resiliencia-panel__metrica span {
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        0.05em;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0.62;
+}
+
+
+.resiliencia-panel__metrica strong {
+    display:
+        block;
+
+    overflow:
+        hidden;
+
+    font-size:
+        18px;
+
+    line-height:
+        1.2;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.resiliencia-panel__metrica small {
+    display:
+        block;
+
+    margin-top:
+        6px;
+
+    overflow:
+        hidden;
+
+    font-size:
+        10px;
+
+    opacity:
+        0.6;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.resiliencia-panel__columnas {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap:
+        14px;
+}
+
+
+.resiliencia-panel__subpanel {
+    min-width:
+        0;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.14);
+
+    border-radius:
+        14px;
+
+    overflow:
+        hidden;
+}
+
+
+.resiliencia-panel__subcabecera {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        13px 14px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.11);
+}
+
+
+.resiliencia-panel__subcabecera h3 {
+    margin:
+        0;
+
+    font-size:
+        14px;
+}
+
+
+.resiliencia-panel__subcabecera span {
+    font-size:
+        10px;
+
+    opacity:
+        0.58;
+}
+
+
+.resiliencia-panel__lista {
+    display:
+        grid;
+}
+
+
+.resiliencia-panel__check {
+    display:
+        grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr);
+
+    gap:
+        11px;
+
+    padding:
+        12px 14px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.08);
+}
+
+
+.resiliencia-panel__check:last-child {
+    border-bottom:
+        0;
+}
+
+
+.resiliencia-panel__check-indicador {
+    width:
+        9px;
+
+    height:
+        9px;
+
+    margin-top:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        #64748b;
+}
+
+
+.resiliencia-panel__check--ok
+.resiliencia-panel__check-indicador {
+    background:
+        #22c55e;
+}
+
+
+.resiliencia-panel__check--atencion
+.resiliencia-panel__check-indicador {
+    background:
+        #f59e0b;
+}
+
+
+.resiliencia-panel__check--error
+.resiliencia-panel__check-indicador {
+    background:
+        #ef4444;
+}
+
+
+.resiliencia-panel__check strong {
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    font-size:
+        12px;
+}
+
+
+.resiliencia-panel__check small {
+    display:
+        block;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.45;
+
+    opacity:
+        0.65;
+}
+
+
+.resiliencia-panel__recuperacion {
+    display:
+        grid;
+
+    gap:
+        7px;
+
+    padding:
+        12px 14px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.08);
+}
+
+
+.resiliencia-panel__recuperacion:last-child {
+    border-bottom:
+        0;
+}
+
+
+.resiliencia-panel__recuperacion-arriba {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        10px;
+}
+
+
+.resiliencia-panel__recuperacion-tipo {
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    font-size:
+        11px;
+
+    font-weight:
+        750;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.resiliencia-panel__badge {
+    flex:
+        0 0 auto;
+
+    padding:
+        3px 7px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.17);
+
+    border-radius:
+        999px;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+}
+
+
+.resiliencia-panel__badge--pendiente {
+    border-color:
+        rgba(245, 158, 11, 0.35);
+}
+
+
+.resiliencia-panel__badge--resuelta {
+    border-color:
+        rgba(34, 197, 94, 0.32);
+}
+
+
+.resiliencia-panel__recuperacion-datos {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        5px 11px;
+
+    font-size:
+        10px;
+
+    opacity:
+        0.68;
+}
+
+
+.resiliencia-panel__detalle {
+    font-size:
+        10px;
+
+    line-height:
+        1.45;
+
+    opacity:
+        0.62;
+}
+
+
+.resiliencia-panel__vacio {
+    padding:
+        22px 14px;
+
+    text-align:
+        center;
+
+    font-size:
+        11px;
+
+    opacity:
+        0.58;
+}
+
+
+.resiliencia-panel__actualizando {
+    opacity:
+        0.6;
+}
+
+
+@media (max-width: 1150px) {
+
+    .resiliencia-panel__metricas {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .resiliencia-panel__columnas {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .resiliencia-panel__metricas {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .resiliencia-panel__metricas {
+        grid-template-columns:
+            1fr;
+    }
+}

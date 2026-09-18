@@ -1,0 +1,110 @@
+.alm-ops-resumen {
+    margin: 0 0 1rem;
+}
+
+.alm-ops-resumen__intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.alm-ops-resumen__intro strong {
+    font-size: 0.78rem;
+}
+
+.alm-ops-resumen__intro span {
+    font-size: 0.72rem;
+    opacity: 0.58;
+}
+
+.alm-ops-resumen__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+}
+
+.alm-ops-resumen__card {
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 0.78rem;
+    padding: 0.8rem 0.85rem;
+    background: rgba(255, 255, 255, 0.022);
+}
+
+.alm-ops-resumen__card h4 {
+    margin: 0 0 0.55rem;
+    font-size: 0.82rem;
+}
+
+.alm-ops-resumen__dato {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.7rem;
+    margin-top: 0.38rem;
+    font-size: 0.74rem;
+}
+
+.alm-ops-resumen__dato span {
+    opacity: 0.6;
+}
+
+.alm-ops-resumen__dato strong {
+    min-width: 0;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.alm-ops-resumen__estado {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.62rem;
+    font-weight: 800;
+}
+
+.alm-ops-resumen__estado--ok {
+    background: rgba(45, 190, 125, 0.12);
+    color: #66dfa9;
+}
+
+.alm-ops-resumen__estado--alerta {
+    background: rgba(230, 168, 44, 0.12);
+    color: #f0c66c;
+}
+
+.alm-ops-resumen__mensaje {
+    margin: 0;
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.72rem;
+    background: rgba(255, 255, 255, 0.025);
+    font-size: 0.74rem;
+    opacity: 0.68;
+}
+
+.alm-ops-resumen__error {
+    background: rgba(225, 79, 79, 0.07);
+    color: #ff9f9f;
+    opacity: 1;
+}
+
+@media (max-width: 1100px) {
+    .alm-ops-resumen__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .alm-ops-resumen__intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .alm-ops-resumen__grid {
+        grid-template-columns: 1fr;
+    }
+}

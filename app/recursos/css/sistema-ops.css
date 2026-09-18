@@ -1,0 +1,209 @@
+.ops-estado {
+    margin-top: 1.5rem;
+}
+
+.ops-estado__cabecera {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 1.15rem;
+}
+
+.ops-estado__eyebrow {
+    margin: 0 0 0.22rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.62;
+}
+
+.ops-estado__titulo {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.25;
+}
+
+.ops-estado__descripcion {
+    margin: 0.35rem 0 0;
+    max-width: 72ch;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    opacity: 0.72;
+}
+
+.ops-estado__acciones {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex: 0 0 auto;
+}
+
+.ops-estado__boton {
+    min-height: 2.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.72rem;
+    padding: 0.45rem 0.75rem;
+    background: rgba(255, 255, 255, 0.045);
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.ops-estado__boton:hover {
+    background: rgba(255, 255, 255, 0.075);
+}
+
+.ops-estado__boton:disabled {
+    cursor: wait;
+    opacity: 0.52;
+}
+
+.ops-estado__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    border-radius: 999px;
+    padding: 0.28rem 0.68rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.045em;
+}
+
+.ops-estado__badge--ok {
+    background: rgba(45, 190, 125, 0.13);
+    color: #66dfa9;
+}
+
+.ops-estado__badge--warn {
+    background: rgba(230, 168, 44, 0.13);
+    color: #f0c66c;
+}
+
+.ops-estado__badge--fail {
+    background: rgba(225, 79, 79, 0.13);
+    color: #ff8c8c;
+}
+
+.ops-estado__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.ops-estado__card {
+    min-width: 0;
+    min-height: 8.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 0.85rem;
+    padding: 0.95rem 1rem;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.ops-estado__card h3 {
+    margin: 0 0 0.72rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.ops-estado__dato {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-top: 0.48rem;
+    font-size: 0.8rem;
+    line-height: 1.35;
+}
+
+.ops-estado__dato span:first-child {
+    min-width: 0;
+    opacity: 0.62;
+}
+
+.ops-estado__dato strong {
+    min-width: 0;
+    max-width: 16rem;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.ops-estado__contadores {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+}
+
+.ops-estado__contador {
+    border-radius: 0.68rem;
+    padding: 0.58rem 0.45rem;
+    background: rgba(255, 255, 255, 0.038);
+    text-align: center;
+}
+
+.ops-estado__contador strong {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.15;
+}
+
+.ops-estado__contador span {
+    display: block;
+    margin-top: 0.18rem;
+    font-size: 0.64rem;
+    opacity: 0.56;
+}
+
+.ops-estado__pie {
+    margin: 0.85rem 0 0;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.055);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    opacity: 0.58;
+}
+
+.ops-estado__mensaje {
+    margin: 0;
+    border-radius: 0.75rem;
+    padding: 0.8rem 0.9rem;
+    background: rgba(255, 255, 255, 0.035);
+    font-size: 0.82rem;
+}
+
+.ops-estado__error {
+    background: rgba(225, 79, 79, 0.08);
+    color: #ff9f9f;
+}
+
+@media (max-width: 1200px) {
+    .ops-estado__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .ops-estado {
+        padding: 1rem;
+    }
+
+    .ops-estado__cabecera {
+        flex-direction: column;
+    }
+
+    .ops-estado__acciones {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .ops-estado__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ops-estado__card {
+        min-height: 0;
+    }
+}

@@ -1,0 +1,10 @@
+[Unit]
+Description=Actualizar inventario remoto PS3
+
+[Timer]
+OnBootSec=15s
+OnUnitActiveSec=15s
+AccuracySec=2s
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,23 @@
+[Unit]
+Description=JGG Catalogo automatico de PKG PS3
+
+[Service]
+Type=oneshot
+
+User=ctps3
+Group=ctps3
+
+ExecStart=/usr/bin/python3 /opt/ctps3/admin/herramientas/catalogar-pkg.py
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+
+ProtectSystem=strict
+ProtectHome=true
+
+ReadOnlyPaths=/opt/ctps3/admin
+ReadOnlyPaths=/srv/ps3/PKG
+
+ReadWritePaths=/var/lib/ctps3
+ReadWritePaths=/var/log/ctps3

@@ -1,0 +1,360 @@
+.cola-profesional {
+    margin: -4px 0 18px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+
+.cola-profesional__dato {
+    min-width: 0;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-radius: 11px;
+
+    background:
+        var(--fondo-secundario);
+}
+
+
+.cola-profesional__dato span,
+.cola-profesional__dato strong {
+    display: block;
+}
+
+
+.cola-profesional__dato span {
+    margin-bottom: 5px;
+
+    color: var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+
+.cola-profesional__dato strong {
+    overflow: hidden;
+
+    color: var(--texto);
+
+    font-size: 14px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.prioridad-v2 {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 21px;
+
+    margin-top: 6px;
+    padding: 0 7px;
+
+    border: 1px solid var(--borde);
+    border-radius: 999px;
+
+    color: var(--texto-3);
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: .07em;
+}
+
+
+.prioridad-v2--alta {
+    border-color:
+        rgba(255,109,114,.25);
+
+    background:
+        rgba(255,109,114,.07);
+
+    color: #ff9599;
+}
+
+
+.prioridad-v2--normal {
+    border-color:
+        rgba(99,168,255,.22);
+
+    background:
+        rgba(99,168,255,.06);
+
+    color: var(--azul);
+}
+
+
+.prioridad-v2--baja {
+    border-color:
+        rgba(115,129,150,.25);
+
+    background:
+        rgba(115,129,150,.06);
+
+    color: var(--texto-3);
+}
+
+
+.cola-controles-v2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.cola-controles-v2 .boton {
+    min-width: 32px;
+    padding: 0 8px;
+
+    font-size: 15px;
+}
+
+
+.selector-prioridad-v2 {
+    min-height: 32px;
+    padding: 0 28px 0 9px;
+
+    border:
+        1px solid var(--borde);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background:
+        var(--panel-2);
+
+    color:
+        var(--texto-2);
+
+    font: inherit;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.selector-prioridad-v2:focus {
+    border-color:
+        rgba(99,168,255,.45);
+}
+
+
+@media (max-width: 1000px) {
+    .cola-profesional {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 620px) {
+    .cola-profesional {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .cola-controles-v2 {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .selector-prioridad-v2 {
+        flex: 1;
+    }
+}
+
+
+/* ========================================================
+   CTPS3 ETAPA 6B
+   ======================================================== */
+
+.cola-global-v3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+.cola-global-v3__estado {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+
+.cola-global-v3__estado > div {
+    display: grid;
+    gap: 2px;
+}
+
+
+.cola-global-v3__estado strong {
+    color: var(--texto-2);
+    font-size: 10px;
+    letter-spacing: .06em;
+}
+
+
+.cola-global-v3__estado span:not(
+    .cola-global-v3__punto
+) {
+    color: var(--texto-3);
+    font-size: 9px;
+}
+
+
+.cola-global-v3__punto {
+    width: 9px;
+    height: 9px;
+
+    flex: 0 0 auto;
+
+    border-radius: 999px;
+}
+
+
+.cola-global-v3__punto--activo {
+    background: var(--primario);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(97,212,139,.08);
+}
+
+
+.cola-global-v3__punto--pausa {
+    background: var(--amarillo);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239,193,90,.08);
+}
+
+
+.modal__tarjeta--detalle-v3 {
+    width: min(760px, 100%);
+    max-height: min(82vh, 900px);
+
+    overflow-y: auto;
+}
+
+
+.detalle-v3__cabecera {
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+.detalle-v3__cabecera h3 {
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
+}
+
+
+.detalle-v3 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+
+.detalle-v3__fila {
+    min-width: 0;
+    padding: 11px 12px;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-radius: 10px;
+
+    background:
+        var(--fondo-secundario);
+}
+
+
+.detalle-v3__fila--amplia {
+    grid-column: 1 / -1;
+}
+
+
+.detalle-v3__fila span,
+.detalle-v3__fila strong {
+    display: block;
+}
+
+
+.detalle-v3__fila span {
+    margin-bottom: 5px;
+
+    color: var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+
+.detalle-v3__fila strong {
+    overflow-wrap: anywhere;
+
+    color: var(--texto-2);
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+@media (max-width: 900px) {
+    .cola-global-v3 {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+@media (max-width: 620px) {
+    .detalle-v3 {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-v3__fila--amplia {
+        grid-column: auto;
+    }
+
+    .cola-global-v3 {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .cola-global-v3 > .boton {
+        width: 100%;
+    }
+}

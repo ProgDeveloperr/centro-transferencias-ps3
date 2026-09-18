@@ -1,0 +1,729 @@
+.almacenamiento-vista {
+    display: grid;
+    gap: 18px;
+}
+
+.almacenamiento-vista__cabecera {
+    align-items: flex-end;
+}
+
+.alm-estado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 112px;
+    min-height: 34px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.alm-estado--cargando,
+.alm-estado--neutro {
+    opacity: .75;
+}
+
+.alm-estado--ok {
+    border-color: rgba(79, 211, 142, .45);
+}
+
+.alm-estado--alerta {
+    border-color: rgba(255, 188, 80, .5);
+}
+
+.alm-aviso-seguridad {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .025);
+}
+
+.alm-aviso-seguridad strong {
+    flex: 0 0 auto;
+}
+
+.alm-aviso-seguridad span {
+    opacity: .72;
+    line-height: 1.5;
+}
+
+.alm-metricas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.alm-metrica {
+    display: grid;
+    gap: 7px;
+    padding: 18px;
+    min-height: 132px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .025);
+}
+
+.alm-metrica > span {
+    font-size: 12px;
+    opacity: .65;
+}
+
+.alm-metrica > strong {
+    align-self: center;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.1;
+}
+
+.alm-metrica > small {
+    opacity: .55;
+    line-height: 1.4;
+}
+
+.alm-panel {
+    display: grid;
+    gap: 18px;
+}
+
+.alm-panel__cabecera {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.alm-panel__cabecera h3 {
+    margin: 4px 0 6px;
+}
+
+.alm-panel__cabecera p {
+    margin: 0;
+    opacity: .64;
+}
+
+.alm-panel__cabecera--lista {
+    align-items: flex-end;
+}
+
+.alm-actualizado,
+.alm-conteo {
+    flex: 0 0 auto;
+    font-size: 12px;
+    opacity: .65;
+}
+
+.alm-clases {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.alm-clase {
+    display: grid;
+    gap: 8px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .02);
+}
+
+.alm-clase__cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.alm-clase__cabecera span {
+    display: inline-flex;
+    min-width: 28px;
+    min-height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .07);
+    font-size: 12px;
+}
+
+.alm-clase__tamano {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.alm-clase small {
+    opacity: .55;
+}
+
+.alm-controles {
+    display: grid;
+    grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.alm-control {
+    display: grid;
+    gap: 6px;
+}
+
+.alm-control > span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    opacity: .55;
+}
+
+.alm-control input,
+.alm-control select {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .16);
+    color: inherit;
+    outline: none;
+}
+
+.alm-control input:focus,
+.alm-control select:focus {
+    border-color: rgba(255, 255, 255, .24);
+}
+
+.alm-error {
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 110, 110, .35);
+    border-radius: 10px;
+    background: rgba(255, 80, 80, .06);
+}
+
+.alm-tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 12px;
+}
+
+.alm-tabla {
+    width: 100%;
+    min-width: 1040px;
+    border-collapse: collapse;
+}
+
+.alm-tabla th,
+.alm-tabla td {
+    padding: 13px 14px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255, 255, 255, .055);
+}
+
+.alm-tabla th {
+    font-size: 10px;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    opacity: .55;
+}
+
+.alm-tabla tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.alm-elemento {
+    display: grid;
+    gap: 5px;
+    min-width: 310px;
+}
+
+.alm-elemento > strong {
+    line-height: 1.35;
+}
+
+.alm-elemento > span {
+    font-size: 12px;
+    opacity: .63;
+}
+
+.alm-elemento code {
+    display: block;
+    max-width: 470px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    opacity: .55;
+}
+
+.alm-evidencia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 3px;
+}
+
+.alm-evidencia span {
+    padding: 3px 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .045);
+    font-size: 9px;
+    opacity: .62;
+}
+
+.alm-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .06);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.alm-chip--clase {
+    background: rgba(255, 255, 255, .085);
+}
+
+.alm-subtipo,
+.alm-alerta-texto {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    opacity: .55;
+}
+
+.alm-alerta-texto {
+    opacity: .85;
+}
+
+.alm-tamano {
+    white-space: nowrap;
+}
+
+.alm-politica {
+    display: block;
+    max-width: 250px;
+    font-size: 11px;
+    line-height: 1.45;
+    opacity: .66;
+}
+
+.alm-cargando,
+.alm-vacio {
+    padding: 20px;
+    text-align: center;
+    opacity: .58;
+}
+
+@media (max-width: 1100px) {
+    .alm-metricas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .alm-clases {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .alm-controles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .alm-control--buscar {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 700px) {
+    .almacenamiento-vista__cabecera,
+    .alm-panel__cabecera,
+    .alm-panel__cabecera--lista,
+    .alm-aviso-seguridad {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .alm-metricas,
+    .alm-clases,
+    .alm-controles {
+        grid-template-columns: 1fr;
+    }
+
+    .alm-control--buscar {
+        grid-column: auto;
+    }
+
+    .alm-metrica {
+        min-height: 0;
+    }
+}
+
+/*
+ * ==========================================================
+ * ESP-3I-E1 — PULIDO VISUAL ALMACENAMIENTO V2
+ * ==========================================================
+ *
+ * Objetivos:
+ * - mejorar jerarquía y legibilidad;
+ * - hacer más claros los filtros y tarjetas;
+ * - reducir fatiga visual en la tabla;
+ * - mantener intacta toda la lógica read-only.
+ */
+
+.almacenamiento-vista {
+    gap: 20px;
+}
+
+.almacenamiento-vista__cabecera {
+    gap: 18px;
+}
+
+.alm-estado {
+    min-width: 118px;
+    min-height: 36px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, .025);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+.alm-estado--ok {
+    background: rgba(79, 211, 142, .055);
+}
+
+.alm-estado--alerta {
+    background: rgba(255, 188, 80, .055);
+}
+
+.alm-aviso-seguridad {
+    padding: 14px 16px;
+    border-left-width: 3px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, .035),
+            rgba(255, 255, 255, .015)
+        );
+}
+
+.alm-aviso-seguridad strong {
+    font-size: 12px;
+    letter-spacing: .02em;
+}
+
+.alm-aviso-seguridad span {
+    font-size: 12px;
+}
+
+.alm-metricas {
+    gap: 14px;
+}
+
+.alm-metrica {
+    position: relative;
+    gap: 9px;
+    padding: 19px;
+    border-color: rgba(255, 255, 255, .09);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .035),
+            rgba(255, 255, 255, .015)
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+.alm-metrica > span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+    opacity: .58;
+}
+
+.alm-metrica > strong {
+    font-size: clamp(24px, 2.2vw, 32px);
+    letter-spacing: -.025em;
+    font-variant-numeric: tabular-nums;
+}
+
+.alm-metrica > small {
+    font-size: 11px;
+    opacity: .58;
+}
+
+.alm-panel {
+    gap: 20px;
+}
+
+.alm-panel__cabecera {
+    padding-bottom: 2px;
+}
+
+.alm-panel__cabecera h3 {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.alm-panel__cabecera p {
+    max-width: 720px;
+    line-height: 1.55;
+}
+
+.alm-actualizado,
+.alm-conteo {
+    padding: 6px 9px;
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .025);
+    white-space: nowrap;
+}
+
+.alm-clases {
+    gap: 14px;
+}
+
+.alm-clase {
+    position: relative;
+    gap: 9px;
+    min-height: 116px;
+    padding: 16px;
+    overflow: hidden;
+    border-color: rgba(255, 255, 255, .085);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .03),
+            rgba(255, 255, 255, .012)
+        );
+    transition:
+        transform .16s ease,
+        border-color .16s ease,
+        background .16s ease;
+}
+
+.alm-clase:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, .14);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .045),
+            rgba(255, 255, 255, .018)
+        );
+}
+
+.alm-clase__cabecera strong {
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.alm-clase__cabecera span {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0 8px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.alm-clase__tamano {
+    font-size: 21px;
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+.alm-clase small {
+    line-height: 1.4;
+    opacity: .58;
+}
+
+.alm-controles {
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, .065);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .018);
+}
+
+.alm-control {
+    gap: 7px;
+}
+
+.alm-control > span {
+    font-size: 10px;
+    opacity: .62;
+}
+
+.alm-control input,
+.alm-control select {
+    min-height: 44px;
+    padding: 10px 12px;
+    border-color: rgba(255, 255, 255, .1);
+    background: rgba(0, 0, 0, .19);
+    transition:
+        border-color .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+.alm-control input:hover,
+.alm-control select:hover {
+    border-color: rgba(255, 255, 255, .16);
+    background: rgba(0, 0, 0, .23);
+}
+
+.alm-control input:focus,
+.alm-control select:focus {
+    border-color: rgba(255, 255, 255, .3);
+    background: rgba(0, 0, 0, .24);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .035);
+}
+
+.alm-tabla-contenedor {
+    border-color: rgba(255, 255, 255, .08);
+    background: rgba(0, 0, 0, .055);
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(255, 255, 255, .18)
+        rgba(255, 255, 255, .025);
+}
+
+.alm-tabla-contenedor::-webkit-scrollbar {
+    height: 9px;
+}
+
+.alm-tabla-contenedor::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .025);
+}
+
+.alm-tabla-contenedor::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background:
+        rgba(255, 255, 255, .16)
+        padding-box;
+}
+
+.alm-tabla {
+    min-width: 1120px;
+}
+
+.alm-tabla th,
+.alm-tabla td {
+    padding: 14px 15px;
+}
+
+.alm-tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: rgba(255, 255, 255, .025);
+    font-size: 9px;
+    font-weight: 800;
+    opacity: .68;
+}
+
+.alm-tabla tbody tr {
+    transition: background .14s ease;
+}
+
+.alm-tabla tbody tr:hover {
+    background: rgba(255, 255, 255, .022);
+}
+
+.alm-elemento {
+    gap: 6px;
+    min-width: 330px;
+}
+
+.alm-elemento > strong {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.alm-elemento > span {
+    font-size: 11px;
+    opacity: .68;
+}
+
+.alm-elemento code {
+    max-width: 500px;
+    font-size: 10px;
+    line-height: 1.45;
+    opacity: .59;
+}
+
+.alm-evidencia {
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.alm-evidencia span {
+    padding: 4px 7px;
+    border: 1px solid rgba(255, 255, 255, .045);
+    background: rgba(255, 255, 255, .035);
+    font-size: 9px;
+    line-height: 1.15;
+    opacity: .66;
+}
+
+.alm-chip {
+    min-height: 27px;
+    padding: 5px 9px;
+    border: 1px solid rgba(255, 255, 255, .045);
+    font-size: 9px;
+    letter-spacing: .015em;
+}
+
+.alm-chip--clase {
+    background: rgba(255, 255, 255, .075);
+}
+
+.alm-subtipo,
+.alm-alerta-texto {
+    margin-top: 7px;
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+.alm-tamano {
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+.alm-politica {
+    max-width: 285px;
+    font-size: 10px;
+    line-height: 1.55;
+    opacity: .72;
+}
+
+.alm-cargando,
+.alm-vacio {
+    padding: 24px 20px;
+}
+
+@media (max-width: 700px) {
+    .almacenamiento-vista {
+        gap: 16px;
+    }
+
+    .alm-aviso-seguridad {
+        gap: 7px;
+    }
+
+    .alm-metrica {
+        padding: 16px;
+    }
+
+    .alm-clase {
+        min-height: 0;
+    }
+
+    .alm-controles {
+        padding: 12px;
+    }
+}

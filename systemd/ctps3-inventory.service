@@ -1,0 +1,33 @@
+[Unit]
+Description=JGG Inventario remoto de PS3
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+
+User=ctps3
+Group=ctps3
+
+ExecStart=/usr/bin/python3 /opt/ctps3/admin/herramientas/inspeccionar-ps3.py
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+
+ProtectSystem=strict
+ProtectHome=true
+
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+
+RestrictSUIDSGID=true
+LockPersonality=true
+
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+ReadOnlyPaths=/opt/ctps3/admin
+
+ReadWritePaths=/var/lib/ctps3

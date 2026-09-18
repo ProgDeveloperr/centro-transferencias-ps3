@@ -1,0 +1,10 @@
+[Unit]
+Description=Actualizar catalogo PS3 cada 30 segundos
+
+[Timer]
+OnBootSec=20s
+OnUnitActiveSec=30s
+AccuracySec=5s
+
+[Install]
+WantedBy=timers.target

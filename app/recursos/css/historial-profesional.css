@@ -1,0 +1,448 @@
+.historial-profesional-v4 {
+    margin: -3px 0 20px;
+}
+
+
+.historial-stats-v4 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+}
+
+
+.historial-stat-v4 {
+    min-width: 0;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-radius: 11px;
+
+    background:
+        var(--fondo-secundario);
+}
+
+
+.historial-stat-v4 span,
+.historial-stat-v4 strong,
+.historial-stat-v4 small {
+    display: block;
+}
+
+
+.historial-stat-v4 span {
+    margin-bottom: 5px;
+
+    color: var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+
+.historial-stat-v4 strong {
+    overflow: hidden;
+
+    color: var(--texto);
+
+    font-size: 17px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.historial-stat-v4 small {
+    margin-top: 3px;
+
+    color: var(--texto-3);
+
+    font-size: 9px;
+}
+
+
+.historial-filtros-v4 {
+    padding: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 2fr)
+        minmax(130px, .8fr)
+        minmax(160px, 1fr)
+        minmax(140px, .8fr)
+        auto;
+
+    align-items: end;
+
+    gap: 9px;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-radius:
+        12px 12px 0 0;
+
+    background:
+        var(--fondo-secundario);
+}
+
+
+.historial-filtros-v4 label,
+.historial-busqueda-v4 {
+    min-width: 0;
+
+    display: grid;
+
+    gap: 5px;
+}
+
+
+.historial-filtros-v4 label > span,
+.historial-busqueda-v4 > span {
+    color: var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+
+.historial-filtros-v4 input,
+.historial-filtros-v4 select {
+    width: 100%;
+    min-width: 0;
+    min-height: 36px;
+
+    padding: 0 10px;
+
+    border:
+        1px solid var(--borde);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background:
+        var(--panel-2);
+
+    color:
+        var(--texto);
+
+    font: inherit;
+
+    font-size: 11px;
+}
+
+
+.historial-filtros-v4 input:focus,
+.historial-filtros-v4 select:focus {
+    border-color:
+        rgba(99,168,255,.45);
+}
+
+
+.historial-filtros-v4
+input::placeholder {
+    color:
+        var(--texto-3);
+}
+
+
+.historial-filtros-v4__pie {
+    padding: 8px 12px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-top: 0;
+
+    border-radius:
+        0 0 12px 12px;
+
+    color:
+        var(--texto-3);
+
+    font-size: 9px;
+}
+
+
+.historial-filtros-v4__pie
+span:first-child {
+    color:
+        var(--texto-2);
+
+    font-weight:
+        750;
+}
+
+
+.historial-juegos-v4 {
+    margin-top: 14px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-radius: 12px;
+
+    background:
+        var(--fondo-secundario);
+}
+
+
+.historial-juegos-v4__cabecera {
+    padding: 13px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    border-bottom:
+        1px solid var(--borde-suave);
+}
+
+
+.historial-juegos-v4__cabecera h3 {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+.historial-juegos-v4__cabecera
+> span {
+    color:
+        var(--texto-3);
+
+    font-size:
+        10px;
+}
+
+
+.historial-juegos-v4__tabla {
+    display: grid;
+}
+
+
+.historial-juego-v4 {
+    padding: 11px 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(230px, 2fr)
+        repeat(
+            5,
+            minmax(85px, .65fr)
+        );
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom:
+        1px solid
+        rgba(37,48,65,.55);
+}
+
+
+.historial-juego-v4:last-child {
+    border-bottom: 0;
+}
+
+
+.historial-juego-v4 > div {
+    min-width: 0;
+}
+
+
+.historial-juego-v4
+> div:not(
+    .historial-juego-v4__nombre
+) span,
+.historial-juego-v4
+> div:not(
+    .historial-juego-v4__nombre
+) strong {
+    display: block;
+}
+
+
+.historial-juego-v4
+> div:not(
+    .historial-juego-v4__nombre
+) span {
+    margin-bottom: 3px;
+
+    color:
+        var(--texto-3);
+
+    font-size: 8px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .05em;
+}
+
+
+.historial-juego-v4
+> div:not(
+    .historial-juego-v4__nombre
+) strong {
+    color:
+        var(--texto-2);
+
+    font-size:
+        10px;
+}
+
+
+.historial-juego-v4__nombre
+strong,
+.historial-juego-v4__nombre
+span {
+    display: block;
+}
+
+
+.historial-juego-v4__nombre
+strong {
+    overflow: hidden;
+
+    color:
+        var(--texto);
+
+    font-size: 11px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.historial-juego-v4__nombre
+span {
+    margin-top: 3px;
+
+    color:
+        var(--texto-3);
+
+    font-family:
+        monospace;
+
+    font-size:
+        9px;
+}
+
+
+#historial
+.transferencia[hidden] {
+    display: none;
+}
+
+
+@media (max-width: 1180px) {
+
+    .historial-stats-v4 {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .historial-filtros-v4 {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .historial-busqueda-v4 {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .historial-filtros-v4
+    > .boton {
+        width: 100%;
+    }
+
+
+    .historial-juego-v4 {
+        grid-template-columns:
+            minmax(200px, 2fr)
+            repeat(
+                2,
+                minmax(90px, 1fr)
+            );
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .historial-stats-v4 {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .historial-filtros-v4 {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .historial-busqueda-v4 {
+        grid-column: auto;
+    }
+
+
+    .historial-filtros-v4__pie {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+
+    .historial-juego-v4 {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .historial-juego-v4__nombre {
+        grid-column:
+            1 / -1;
+    }
+}

@@ -1,0 +1,780 @@
+.estado-superior {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.ps3-resumen {
+    margin-bottom: 18px;
+    padding: 17px 19px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(230px, .8fr)
+        minmax(0, 2fr);
+    align-items: center;
+    gap: 20px;
+
+    border:
+        1px solid var(--borde-suave);
+
+    border-radius:
+        var(--radio);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(99,168,255,.045),
+            transparent 44%
+        ),
+        var(--panel);
+
+    box-shadow:
+        var(--sombra);
+}
+
+
+.ps3-resumen__principal {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+.ps3-pulso {
+    width: 12px;
+    height: 12px;
+
+    flex: 0 0 auto;
+
+    border-radius: 999px;
+
+    background:
+        var(--texto-3);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(115,129,150,.08);
+}
+
+
+.ps3-pulso--ok {
+    background:
+        var(--primario);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(97,212,139,.09),
+        0 0 20px
+        rgba(97,212,139,.28);
+}
+
+
+.ps3-pulso--error {
+    background:
+        var(--rojo);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(255,109,114,.09),
+        0 0 20px
+        rgba(255,109,114,.22);
+}
+
+
+.ps3-pulso--neutro {
+    background:
+        var(--texto-3);
+}
+
+
+.ps3-resumen__titulo {
+    min-width: 0;
+
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 7px 10px;
+}
+
+
+.ps3-resumen__titulo strong {
+    font-size: 15px;
+}
+
+
+.ps3-resumen__titulo span {
+    color:
+        var(--texto-3);
+
+    font-family:
+        monospace;
+
+    font-size:
+        12px;
+}
+
+
+.ps3-resumen__datos {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(0, 1fr)
+        minmax(0, .8fr);
+
+    gap: 12px;
+}
+
+
+.ps3-resumen__datos > div {
+    min-width: 0;
+    padding-left: 14px;
+
+    border-left:
+        1px solid
+        var(--borde-suave);
+}
+
+
+.ps3-resumen__datos span,
+.ps3-resumen__datos strong {
+    display: block;
+}
+
+
+.ps3-resumen__datos span {
+    margin-bottom: 4px;
+
+    color:
+        var(--texto-3);
+
+    font-size:
+        10px;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        .06em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.ps3-resumen__datos strong {
+    overflow: hidden;
+
+    color:
+        var(--texto-2);
+
+    font-size:
+        11px;
+
+    font-weight:
+        650;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.ps3-resumen__error {
+    grid-column:
+        1 / -1;
+
+    padding-top:
+        12px;
+
+    border-top:
+        1px solid
+        rgba(255,109,114,.16);
+
+    color:
+        #ff9da1;
+
+    font-size:
+        12px;
+}
+
+
+.ps3-resumen__error--oculto {
+    display: none;
+}
+
+
+/*
+ * Seis métricas en escritorio.
+ */
+
+.metricas {
+    grid-template-columns:
+        repeat(
+            6,
+            minmax(0, 1fr)
+        );
+}
+
+
+/*
+ * Estado remoto de cada PKG.
+ */
+
+.archivo__lado-v2 {
+    min-width: 110px;
+
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.archivo__remoto-v2 {
+    display: block;
+
+    margin-top:
+        5px;
+
+    color:
+        var(--texto-2);
+
+    font-size:
+        10px;
+}
+
+
+.archivo__check-v2 {
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius:
+        5px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+}
+
+
+.archivo__check-v2--ok {
+    border-color:
+        rgba(97,212,139,.32);
+
+    background:
+        rgba(97,212,139,.09);
+
+    color:
+        var(--primario);
+}
+
+
+.archivo__check-v2--error {
+    border-color:
+        rgba(255,109,114,.32);
+
+    background:
+        rgba(255,109,114,.09);
+
+    color:
+        var(--rojo);
+}
+
+
+.estado-ps3 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height:
+        23px;
+
+    padding:
+        0 8px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius:
+        999px;
+
+    font-size:
+        9px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .06em;
+
+    white-space:
+        nowrap;
+}
+
+
+.estado-ps3--completo {
+    border-color:
+        rgba(97,212,139,.25);
+
+    background:
+        rgba(97,212,139,.08);
+
+    color:
+        var(--primario);
+}
+
+
+.estado-ps3--parcial {
+    border-color:
+        rgba(239,193,90,.28);
+
+    background:
+        rgba(239,193,90,.08);
+
+    color:
+        var(--amarillo);
+}
+
+
+.estado-ps3--ausente {
+    border-color:
+        rgba(115,129,150,.28);
+
+    background:
+        rgba(115,129,150,.07);
+
+    color:
+        var(--texto-2);
+}
+
+
+.estado-ps3--conflicto {
+    border-color:
+        rgba(255,109,114,.28);
+
+    background:
+        rgba(255,109,114,.08);
+
+    color:
+        var(--rojo);
+}
+
+
+.archivo--estado-completo {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(97,212,139,.035),
+            transparent 45%
+        );
+}
+
+
+.archivo--estado-parcial {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(239,193,90,.045),
+            transparent 45%
+        );
+}
+
+
+.archivo--estado-conflicto {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,109,114,.045),
+            transparent 45%
+        );
+}
+
+
+/*
+ * Resumen por juego.
+ */
+
+.juego__ps3-v2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.juego__ps3-contador {
+    color:
+        var(--texto-2);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    white-space:
+        nowrap;
+}
+
+
+.juego__ps3-contador--ok {
+    color:
+        var(--primario);
+}
+
+
+/*
+ * Inventario exclusivo PS3.
+ */
+
+.inventario-ps3 {
+    overflow: hidden;
+
+    display: grid;
+
+    border:
+        1px solid
+        var(--borde-suave);
+
+    border-radius:
+        13px;
+
+    background:
+        var(--fondo-secundario);
+}
+
+
+.remoto-v2 {
+    min-width: 0;
+
+    padding:
+        12px 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        36px
+        minmax(0, 1fr)
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    border-bottom:
+        1px solid
+        rgba(37,48,65,.55);
+}
+
+
+.remoto-v2:last-child {
+    border-bottom: 0;
+}
+
+
+.remoto-v2__icono {
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(99,168,255,.22);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(99,168,255,.07);
+
+    color:
+        var(--azul);
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .04em;
+}
+
+
+.remoto-v2__contenido {
+    min-width: 0;
+}
+
+
+.remoto-v2__nombre {
+    overflow: hidden;
+
+    color:
+        var(--texto);
+
+    font-size:
+        12px;
+
+    font-weight:
+        650;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.remoto-v2__meta {
+    margin-top:
+        3px;
+
+    overflow:
+        hidden;
+
+    color:
+        var(--texto-3);
+
+    font-family:
+        monospace;
+
+    font-size:
+        10px;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.remoto-v2__tamano {
+    color:
+        var(--texto-2);
+
+    font-size:
+        11px;
+
+    white-space:
+        nowrap;
+}
+
+
+.vacio--ok {
+    color:
+        var(--primario);
+}
+
+
+@media (max-width: 1180px) {
+
+    .metricas {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+    .ps3-resumen {
+        grid-template-columns:
+            1fr;
+    }
+
+    .ps3-resumen__datos
+    > div:first-child {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .metricas {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .ps3-resumen__datos {
+        grid-template-columns:
+            1fr;
+    }
+
+    .ps3-resumen__datos > div {
+        padding:
+            10px 0 0;
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            var(--borde-suave);
+    }
+
+    .ps3-resumen__datos
+    > div:first-child {
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .juego__cabecera {
+        align-items:
+            flex-start;
+
+        flex-wrap:
+            wrap;
+    }
+
+    .juego__ps3-v2 {
+        width:
+            100%;
+
+        justify-content:
+            space-between;
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .estado-superior {
+        gap: 5px;
+    }
+
+    .estado-superior
+    .estado {
+        min-height:
+            24px;
+
+        padding:
+            0 8px;
+
+        font-size:
+            9px;
+    }
+
+    .ps3-resumen {
+        padding:
+            14px;
+    }
+
+    .archivo__lado-v2 {
+        grid-column:
+            2;
+
+        width:
+            100%;
+
+        min-width:
+            0;
+
+        align-items:
+            center;
+
+        flex-direction:
+            row;
+
+        justify-content:
+            space-between;
+    }
+
+    .remoto-v2 {
+        grid-template-columns:
+            32px
+            minmax(0, 1fr);
+    }
+
+    .remoto-v2__tamano {
+        grid-column:
+            2;
+    }
+
+}
+
+
+/* ========================================================
+   CTPS3 ETAPA 7A · ESTADO INTELIGENTE
+   ======================================================== */
+
+.estado--ps3-aviso {
+    border-color:
+        rgba(239,193,90,.28);
+
+    background:
+        rgba(239,193,90,.08);
+
+    color:
+        var(--amarillo);
+}
+
+
+.ps3-pulso--aviso {
+    background:
+        var(--amarillo);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(239,193,90,.09),
+        0 0 20px
+        rgba(239,193,90,.24);
+}
+
+
+.ps3-resumen__error--aviso {
+    border-top-color:
+        rgba(239,193,90,.16);
+
+    color:
+        var(--amarillo);
+}
+
+
+.ps3-resumen__error--error {
+    border-top-color:
+        rgba(255,109,114,.16);
+
+    color:
+        #ff9da1;
+}

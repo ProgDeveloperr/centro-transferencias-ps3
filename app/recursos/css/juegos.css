@@ -1,0 +1,2280 @@
+/* =========================================================
+   CTPS3 · JUEGOS
+   Vista de inventario instalado
+   Version 1.0.0
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONTROLES
+   ========================================================= */
+
+.juegos-controles {
+    margin-bottom: 16px;
+    padding: 12px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 2fr)
+        minmax(130px, .75fr)
+        minmax(150px, .85fr)
+        minmax(170px, 1fr);
+
+    align-items: end;
+    gap: 10px;
+
+    border:
+        1px solid
+        var(--borde-suave);
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 15, 22, .58);
+}
+
+
+.juegos-buscador,
+.juegos-filtro {
+    min-width: 0;
+
+    display: grid;
+    gap: 5px;
+}
+
+
+.juegos-buscador__etiqueta,
+.juegos-filtro__etiqueta {
+    color:
+        var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+
+.juegos-controles input,
+.juegos-controles select {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background:
+        var(--panel-2);
+
+    color:
+        var(--texto);
+
+    font: inherit;
+    font-size: 11px;
+
+    transition:
+        border-color .14s ease,
+        background .14s ease,
+        box-shadow .14s ease;
+}
+
+
+.juegos-controles input::placeholder {
+    color:
+        var(--texto-3);
+}
+
+
+.juegos-controles input:hover,
+.juegos-controles select:hover {
+    border-color:
+        rgba(148, 163, 184, .22);
+}
+
+
+.juegos-controles input:focus,
+.juegos-controles select:focus {
+    border-color:
+        rgba(99, 168, 255, .48);
+
+    background:
+        rgba(14, 20, 29, .94);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 168, 255, .055);
+}
+
+
+/* =========================================================
+   2. LISTA
+   ========================================================= */
+
+.juegos-lista {
+    display: grid;
+    gap: 13px;
+}
+
+
+/* =========================================================
+   3. TARJETA
+   ========================================================= */
+
+.juego-tarjeta {
+    position: relative;
+
+    min-width: 0;
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .105);
+
+    border-radius: 14px;
+
+    background:
+        rgba(11, 16, 23, .68);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, .015);
+
+    transition:
+        border-color .16s ease,
+        background .16s ease,
+        transform .16s ease;
+}
+
+
+.juego-tarjeta::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(99, 168, 255, .38),
+            transparent
+        );
+
+    opacity: .75;
+}
+
+
+.juego-tarjeta:hover {
+    border-color:
+        rgba(148, 163, 184, .18);
+
+    background:
+        rgba(13, 18, 26, .84);
+}
+
+
+.juego-tarjeta--no-disponible {
+    opacity: .72;
+}
+
+
+.juego-tarjeta--no-disponible::before {
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255, 109, 114, .34),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   4. CABECERA DE TARJETA
+   ========================================================= */
+
+.juego-tarjeta__cabecera {
+    min-width: 0;
+
+    padding:
+        16px 17px 15px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+
+    border-bottom:
+        1px solid
+        var(--borde-suave);
+
+    background:
+        rgba(255, 255, 255, .009);
+}
+
+
+.juego-tarjeta__cabecera > div {
+    min-width: 0;
+}
+
+
+.juego-tarjeta__title-id {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    color:
+        #93c5fd;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: .055em;
+}
+
+
+.juego-tarjeta__cabecera h3 {
+    margin: 0;
+
+    overflow: hidden;
+
+    color:
+        var(--texto);
+
+    font-size: 16px;
+    font-weight: 750;
+
+    letter-spacing: -.015em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   5. RESUMEN
+   ========================================================= */
+
+.juego-tarjeta__resumen {
+    padding:
+        13px 17px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        8px 12px;
+
+    border-bottom:
+        1px solid
+        var(--borde-suave);
+}
+
+
+.juego-tarjeta__resumen > div {
+    min-width: 0;
+
+    padding:
+        8px 9px;
+
+    display: grid;
+    gap: 3px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .075);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, .012);
+}
+
+
+.juego-tarjeta__resumen span {
+    color:
+        var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 750;
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+
+.juego-tarjeta__resumen strong {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color:
+        var(--texto-2);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   6. DETAILS / COMPONENTES
+   ========================================================= */
+
+.juego-componentes {
+    border: 0;
+}
+
+
+.juego-componentes > summary {
+    padding:
+        11px 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    cursor: pointer;
+
+    color:
+        var(--texto-2);
+
+    font-size: 11px;
+    font-weight: 750;
+
+    list-style: none;
+
+    user-select: none;
+
+    transition:
+        color .12s ease,
+        background .12s ease;
+}
+
+
+.juego-componentes > summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.juego-componentes > summary::before {
+    content: "›";
+
+    flex:
+        0 0 auto;
+
+    color:
+        var(--texto-3);
+
+    font-size: 17px;
+    line-height: 1;
+
+    transform:
+        rotate(0deg);
+
+    transition:
+        transform .15s ease,
+        color .15s ease;
+}
+
+
+.juego-componentes[open]
+> summary::before {
+    color:
+        #93c5fd;
+
+    transform:
+        rotate(90deg);
+}
+
+
+.juego-componentes > summary:hover {
+    color:
+        var(--texto);
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.juego-componentes > summary span {
+    margin-left: auto;
+
+    min-width: 24px;
+    min-height: 22px;
+
+    padding:
+        0 7px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(99, 168, 255, .16);
+
+    border-radius: 999px;
+
+    background:
+        rgba(99, 168, 255, .055);
+
+    color:
+        #93c5fd;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+.juego-componentes__lista {
+    padding:
+        0 17px 15px;
+
+    display: grid;
+    gap: 8px;
+}
+
+
+/* =========================================================
+   7. COMPONENTE
+   ========================================================= */
+
+.juego-componente {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .085);
+
+    border-radius: 10px;
+
+    background:
+        rgba(7, 11, 17, .48);
+}
+
+
+.juego-componente__cabecera {
+    min-width: 0;
+
+    padding:
+        9px 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, .075);
+
+    background:
+        rgba(255, 255, 255, .012);
+}
+
+
+.juego-componente__cabecera > strong {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color:
+        var(--texto-2);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: .035em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.juego-componente__cabecera .estado {
+    flex:
+        0 0 auto;
+
+    min-height: 24px;
+
+    padding:
+        0 8px;
+
+    font-size: 9px;
+}
+
+
+.juego-componente__datos {
+    margin: 0;
+    padding: 10px 11px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2.4fr)
+        repeat(
+            3,
+            minmax(90px, .7fr)
+        );
+
+    gap:
+        8px 12px;
+}
+
+
+.juego-componente__datos > div {
+    min-width: 0;
+
+    display: grid;
+    gap: 3px;
+}
+
+
+.juego-componente__datos dt {
+    color:
+        var(--texto-3);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+
+.juego-componente__datos dd {
+    min-width: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color:
+        var(--texto-2);
+
+    font-size: 10px;
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.juego-componente__datos code {
+    color:
+        #a8b7ca;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   8. ESTADOS VACIOS
+   ========================================================= */
+
+.juegos-lista > .vacio,
+.juegos-lista > .cargando {
+    min-height: 110px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px dashed
+        rgba(148, 163, 184, .12);
+
+    border-radius: 12px;
+
+    background:
+        rgba(11, 16, 23, .42);
+}
+
+
+/* =========================================================
+   9. AJUSTES DE CABECERA
+   ========================================================= */
+
+body[data-vista="juegos"]
+.vista-cabecera {
+    align-items: flex-start;
+}
+
+
+body[data-vista="juegos"]
+.vista-cabecera
+> .estado {
+    flex:
+        0 0 auto;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .juegos-controles {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .juego-tarjeta__resumen {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .juego-componente__datos {
+        grid-template-columns:
+            minmax(0, 2fr)
+            repeat(
+                2,
+                minmax(90px, 1fr)
+            );
+    }
+
+
+    .juego-componente__datos
+    > div:first-child {
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .juegos-controles {
+        padding: 10px;
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .juego-tarjeta__cabecera {
+        padding:
+            14px 14px 13px;
+
+        flex-direction:
+            column;
+
+        gap: 10px;
+    }
+
+
+    .juego-tarjeta__cabecera
+    > .estado {
+        align-self:
+            flex-start;
+    }
+
+
+    .juego-tarjeta__cabecera h3 {
+        font-size: 15px;
+
+        white-space: normal;
+    }
+
+
+    .juego-tarjeta__resumen {
+        padding:
+            11px 14px;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 7px;
+    }
+
+
+    .juego-tarjeta__resumen > div {
+        padding:
+            7px 8px;
+    }
+
+
+    .juego-componentes > summary {
+        padding:
+            11px 14px;
+    }
+
+
+    .juego-componentes__lista {
+        padding:
+            0 14px 14px;
+    }
+
+
+    .juego-componente__cabecera {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap: 7px;
+    }
+
+
+    .juego-componente__datos {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .juego-componente__datos
+    > div:first-child {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .juego-componente__datos
+    dd {
+        white-space:
+            normal;
+
+        overflow-wrap:
+            anywhere;
+    }
+
+
+    .juego-componente__datos
+    code {
+        overflow-wrap:
+            anywhere;
+    }
+
+
+    body[data-vista="juegos"]
+    .vista-cabecera {
+        flex-direction:
+            column;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .juego-tarjeta__resumen {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .juego-componente__datos {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .juego-componente__datos
+    > div:first-child {
+        grid-column:
+            auto;
+    }
+}
+
+
+/* =========================================================
+   J2F — BIBLIOTECA VISUAL WEBMAN
+   Version visual 2.0
+   ========================================================= */
+
+
+/* =========================================================
+   1. GRILLA DE JUEGOS
+   ========================================================= */
+
+.juegos-lista {
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(260px, 1fr)
+        );
+
+    align-items: stretch;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   2. TARJETA VISUAL
+   ========================================================= */
+
+.juego-tarjeta {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
+
+    border-color:
+        rgba(148, 163, 184, .13);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(14, 20, 29, .94),
+            rgba(9, 14, 21, .94)
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(0, 0, 0, .12),
+        inset 0 1px 0
+        rgba(255, 255, 255, .025);
+}
+
+
+.juego-tarjeta::before {
+    top: auto;
+    right: 0;
+    bottom: 0;
+
+    width: auto;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(99, 168, 255, .42),
+            transparent
+        );
+}
+
+
+.juego-tarjeta:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 168, 255, .23);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16, 23, 33, .98),
+            rgba(10, 15, 23, .98)
+        );
+
+    box-shadow:
+        0 16px 38px
+        rgba(0, 0, 0, .18),
+        inset 0 1px 0
+        rgba(255, 255, 255, .035);
+}
+
+
+/* =========================================================
+   3. ICON0 / CARATULA
+   ========================================================= */
+
+.juego-tarjeta__visual {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        320 / 176;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, .11);
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(45, 91, 150, .20),
+            transparent 58%
+        ),
+        linear-gradient(
+            145deg,
+            #111923,
+            #080d13
+        );
+
+    isolation: isolate;
+}
+
+
+.juego-tarjeta__visual-fondo {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    display: grid;
+    place-items: center;
+
+    color:
+        rgba(148, 163, 184, .15);
+
+    font-size: 34px;
+    font-weight: 900;
+
+    letter-spacing: .12em;
+
+    user-select: none;
+}
+
+
+.juego-tarjeta__icono {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background:
+        #080b10;
+
+    transition:
+        transform .22s ease,
+        filter .22s ease;
+}
+
+
+.juego-tarjeta:hover
+.juego-tarjeta__icono {
+    transform:
+        scale(1.018);
+
+    filter:
+        brightness(1.035);
+}
+
+
+.juego-tarjeta__visual::after {
+    content: "";
+
+    position: absolute;
+    inset:
+        55% 0 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(3, 7, 12, .18)
+        );
+}
+
+
+.juego-tarjeta__visual-tipo {
+    position: absolute;
+
+    right: 10px;
+    bottom: 9px;
+
+    z-index: 3;
+
+    padding:
+        5px 7px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .16);
+
+    border-radius:
+        7px;
+
+    color:
+        rgba(255, 255, 255, .90);
+
+    background:
+        rgba(5, 10, 16, .76);
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, .20);
+
+    backdrop-filter:
+        blur(7px);
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .045em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   4. CABECERA
+   ========================================================= */
+
+.juego-tarjeta__cabecera {
+    min-height:
+        94px;
+
+    padding:
+        14px 15px 13px;
+
+    gap:
+        10px;
+
+    background:
+        rgba(255, 255, 255, .006);
+}
+
+
+.juego-tarjeta__cabecera > div {
+    flex:
+        1 1 auto;
+}
+
+
+.juego-tarjeta__title-id {
+    margin-bottom:
+        6px;
+
+    font-size:
+        10px;
+}
+
+
+.juego-tarjeta__cabecera h3 {
+    display:
+        -webkit-box;
+
+    overflow:
+        hidden;
+
+    min-height:
+        39px;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.3;
+
+    white-space:
+        normal;
+
+    text-overflow:
+        clip;
+
+    -webkit-box-orient:
+        vertical;
+
+    -webkit-line-clamp:
+        2;
+}
+
+
+/* =========================================================
+   5. ESTADO
+   ========================================================= */
+
+.juego-tarjeta__cabecera
+.estado {
+    flex:
+        0 0 auto;
+
+    margin-top:
+        1px;
+
+    padding:
+        5px 7px;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   6. RESUMEN COMPACTO
+   ========================================================= */
+
+.juego-tarjeta__resumen {
+    padding:
+        11px 14px;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        7px;
+}
+
+
+.juego-tarjeta__resumen > div {
+    padding:
+        8px;
+
+    min-height:
+        48px;
+}
+
+
+.juego-tarjeta__resumen span {
+    font-size:
+        8px;
+}
+
+
+.juego-tarjeta__resumen strong {
+    font-size:
+        10px;
+}
+
+
+/* =========================================================
+   7. COMPONENTES AL PIE
+   ========================================================= */
+
+.juego-componentes {
+    margin-top:
+        auto;
+}
+
+
+.juego-componentes > summary {
+    padding:
+        11px 14px;
+}
+
+
+/* =========================================================
+   8. NO DISPONIBLE
+   ========================================================= */
+
+.juego-tarjeta--no-disponible
+.juego-tarjeta__icono {
+    filter:
+        grayscale(.45)
+        brightness(.72);
+}
+
+
+.juego-tarjeta--no-disponible:hover
+.juego-tarjeta__icono {
+    filter:
+        grayscale(.35)
+        brightness(.80);
+}
+
+
+/* =========================================================
+   9. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .juegos-lista {
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(235px, 1fr)
+            );
+
+        gap:
+            14px;
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .juegos-lista {
+        grid-template-columns:
+            minmax(0, 1fr);
+
+        gap:
+            13px;
+    }
+
+
+    .juego-tarjeta {
+        max-width:
+            100%;
+    }
+
+
+    .juego-tarjeta__cabecera {
+        min-height:
+            auto;
+    }
+
+
+    .juego-tarjeta__cabecera h3 {
+        min-height:
+            auto;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .juego-tarjeta__resumen {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .juego-tarjeta__visual-tipo {
+        right:
+            8px;
+
+        bottom:
+            7px;
+    }
+
+}
+
+/* =========================================================
+   J3-C2 — NAVEGACION Y DETALLE
+   Version visual 3.0
+   ========================================================= */
+
+.juegos-lista > .vacio,
+.juegos-lista > .cargando {
+    grid-column: 1 / -1;
+}
+
+
+.juego-tarjeta__acciones {
+    margin-top: auto;
+    padding: 11px 14px 13px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    border-top:
+        1px solid
+        var(--borde-suave);
+
+    background:
+        rgba(255, 255, 255, .006);
+}
+
+
+.juego-tarjeta__detalle {
+    min-height: 34px;
+    padding: 0 12px;
+
+    border:
+        1px solid
+        rgba(99, 168, 255, .24);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background:
+        rgba(99, 168, 255, .075);
+
+    color:
+        #b9d7ff;
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 800;
+
+    transition:
+        border-color .14s ease,
+        background .14s ease,
+        color .14s ease,
+        transform .14s ease;
+}
+
+
+.juego-tarjeta__detalle:hover {
+    border-color:
+        rgba(99, 168, 255, .42);
+
+    background:
+        rgba(99, 168, 255, .13);
+
+    color:
+        #e2efff;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.juego-tarjeta__detalle:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 168, 255, .10);
+}
+
+
+.juego-dialogo {
+    width:
+        min(
+            980px,
+            calc(100vw - 32px)
+        );
+
+    max-width: none;
+    max-height:
+        calc(100vh - 32px);
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .18);
+
+    border-radius: 16px;
+
+    background:
+        #0b1119;
+
+    color:
+        var(--texto);
+
+    box-shadow:
+        0 28px 90px
+        rgba(0, 0, 0, .52);
+}
+
+
+.juego-dialogo::backdrop {
+    background:
+        rgba(2, 6, 12, .76);
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.juego-dialogo__panel {
+    max-height:
+        calc(100vh - 32px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.juego-dialogo__cabecera {
+    flex: 0 0 auto;
+
+    padding:
+        17px 18px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+
+    border-bottom:
+        1px solid
+        var(--borde-suave);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20, 29, 42, .98),
+            rgba(13, 20, 30, .98)
+        );
+}
+
+
+.juego-dialogo__cabecera h2 {
+    margin: 3px 0 0;
+
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+
+.juego-dialogo__cerrar {
+    flex: 0 0 auto;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .15);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        var(--texto-2);
+
+    font: inherit;
+    font-size: 20px;
+    line-height: 1;
+
+    transition:
+        border-color .14s ease,
+        background .14s ease,
+        color .14s ease;
+}
+
+
+.juego-dialogo__cerrar:hover {
+    border-color:
+        rgba(148, 163, 184, .28);
+
+    background:
+        rgba(255, 255, 255, .055);
+
+    color:
+        var(--texto);
+}
+
+
+.juego-dialogo__contenido {
+    min-height: 0;
+
+    padding: 18px;
+
+    overflow: auto;
+}
+
+
+.juego-detalle {
+    display: grid;
+    gap: 16px;
+}
+
+
+.juego-detalle__identidad {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+.juego-detalle__identidad > div {
+    min-width: 0;
+}
+
+
+.juego-detalle__title-id {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    color:
+        #93c5fd;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: .055em;
+}
+
+
+.juego-detalle__identidad h3 {
+    margin: 0;
+
+    color:
+        var(--texto);
+
+    font-size: 19px;
+    line-height: 1.28;
+}
+
+
+.juego-detalle__resumen {
+    margin: 0;
+
+    display: grid;
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+}
+
+
+.juego-detalle__resumen > div {
+    min-width: 0;
+
+    padding: 10px;
+
+    display: grid;
+    gap: 4px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .085);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, .014);
+}
+
+
+.juego-detalle__resumen dt,
+.juego-detalle-componente__datos dt {
+    color:
+        var(--texto-3);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+
+.juego-detalle__resumen dd,
+.juego-detalle-componente__datos dd {
+    min-width: 0;
+
+    margin: 0;
+
+    color:
+        var(--texto-2);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.juego-detalle__seccion {
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .10);
+
+    border-radius: 12px;
+
+    background:
+        rgba(7, 11, 17, .42);
+}
+
+
+.juego-detalle__seccion-cabecera {
+    padding: 12px 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+
+    border-bottom:
+        1px solid
+        var(--borde-suave);
+
+    background:
+        rgba(255, 255, 255, .012);
+}
+
+
+.juego-detalle__seccion-cabecera h3 {
+    margin: 2px 0 0;
+
+    font-size: 12px;
+}
+
+
+.juego-detalle__componentes {
+    padding: 12px;
+
+    display: grid;
+    gap: 10px;
+}
+
+
+.juego-detalle-componente {
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .085);
+
+    border-radius: 10px;
+
+    background:
+        rgba(10, 15, 22, .58);
+}
+
+
+.juego-detalle-componente__cabecera {
+    padding: 9px 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    border-bottom:
+        1px solid
+        var(--borde-suave);
+}
+
+
+.juego-detalle-componente__cabecera > strong {
+    color:
+        var(--texto-2);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.juego-detalle-componente__datos {
+    margin: 0;
+    padding: 10px 11px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 10px 12px;
+}
+
+
+.juego-detalle-componente__datos > div {
+    min-width: 0;
+
+    display: grid;
+    gap: 3px;
+}
+
+
+.juego-detalle-componente__ruta {
+    grid-column: 1 / -1;
+}
+
+
+.juego-detalle-componente__datos code {
+    display: block;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+
+    color:
+        #a8b7ca;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 9px;
+}
+
+
+@media (max-width: 760px) {
+
+    .juego-detalle__resumen,
+    .juego-detalle-componente__datos {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .juego-dialogo {
+        width:
+            calc(100vw - 16px);
+
+        max-height:
+            calc(100vh - 16px);
+
+        border-radius: 12px;
+    }
+
+
+    .juego-dialogo__panel {
+        max-height:
+            calc(100vh - 16px);
+    }
+
+
+    .juego-dialogo__cabecera,
+    .juego-dialogo__contenido {
+        padding: 13px;
+    }
+
+
+    .juego-detalle__identidad {
+        flex-direction: column;
+    }
+
+
+    .juego-detalle__resumen,
+    .juego-detalle-componente__datos {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .juego-detalle-componente__ruta {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   J3-D3 — ELIMINACION SEGURA DE JUEGOS
+   Version visual 1.0
+   ========================================================= */
+
+.juego-detalle__peligro {
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    border:
+        1px solid
+        rgba(255, 109, 114, .18);
+
+    border-radius: 12px;
+
+    background:
+        rgba(94, 28, 32, .10);
+}
+
+
+.juego-detalle__peligro h3 {
+    margin: 2px 0 5px;
+
+    font-size: 12px;
+}
+
+
+.juego-detalle__peligro p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color:
+        var(--texto-3);
+
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+
+.juego-detalle__eliminar,
+.juego-eliminar__ejecutar {
+    flex: 0 0 auto;
+
+    min-height: 36px;
+    padding: 0 13px;
+
+    border:
+        1px solid
+        rgba(255, 109, 114, .34);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 72, 82, .11);
+
+    color:
+        #ffb4b8;
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 850;
+
+    transition:
+        border-color .14s ease,
+        background .14s ease,
+        color .14s ease,
+        opacity .14s ease;
+}
+
+
+.juego-detalle__eliminar:hover,
+.juego-eliminar__ejecutar:hover:not(:disabled) {
+    border-color:
+        rgba(255, 109, 114, .58);
+
+    background:
+        rgba(255, 72, 82, .18);
+
+    color:
+        #ffe2e4;
+}
+
+
+.juego-eliminar__ejecutar:disabled {
+    cursor: not-allowed;
+    opacity: .42;
+}
+
+
+.juego-dialogo--peligro {
+    width:
+        min(
+            820px,
+            calc(100vw - 32px)
+        );
+
+    border-color:
+        rgba(255, 109, 114, .24);
+}
+
+
+.juego-eliminar {
+    display: grid;
+    gap: 14px;
+}
+
+
+.juego-eliminar__advertencia {
+    padding: 12px 13px;
+
+    border:
+        1px solid
+        rgba(255, 109, 114, .18);
+
+    border-radius: 10px;
+
+    background:
+        rgba(94, 28, 32, .10);
+}
+
+
+.juego-eliminar__advertencia strong {
+    color:
+        #ffc4c7;
+
+    font-size: 11px;
+}
+
+
+.juego-eliminar__advertencia p {
+    margin: 5px 0 0;
+
+    color:
+        var(--texto-3);
+
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+
+.juego-eliminar__resumen {
+    margin: 0;
+
+    display: grid;
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+}
+
+
+.juego-eliminar__resumen > div {
+    min-width: 0;
+    padding: 9px;
+
+    display: grid;
+    gap: 4px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .085);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, .012);
+}
+
+
+.juego-eliminar__resumen dt {
+    color:
+        var(--texto-3);
+
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+.juego-eliminar__resumen dd {
+    min-width: 0;
+    margin: 0;
+
+    overflow-wrap: anywhere;
+
+    color:
+        var(--texto-2);
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+
+.juego-eliminar__componentes {
+    display: grid;
+    gap: 8px;
+}
+
+
+.juego-eliminar-componente {
+    padding: 9px 10px;
+
+    display: grid;
+    gap: 6px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .085);
+
+    border-radius: 9px;
+
+    background:
+        rgba(7, 11, 17, .46);
+}
+
+
+.juego-eliminar-componente > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    color:
+        var(--texto-2);
+
+    font-size: 10px;
+}
+
+
+.juego-eliminar-componente code,
+.juego-eliminar__frase code {
+    overflow-wrap: anywhere;
+
+    color:
+        #b9d7ff;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 9px;
+}
+
+
+.juego-eliminar__frase {
+    padding: 11px 12px;
+
+    display: grid;
+    gap: 6px;
+
+    border:
+        1px dashed
+        rgba(255, 109, 114, .22);
+
+    border-radius: 10px;
+}
+
+
+.juego-eliminar__frase span {
+    color:
+        var(--texto-3);
+
+    font-size: 9px;
+}
+
+
+.juego-eliminar__confirmacion {
+    margin-top: 15px;
+    padding-top: 15px;
+
+    display: grid;
+    gap: 8px;
+
+    border-top:
+        1px solid
+        var(--borde-suave);
+}
+
+
+.juego-eliminar__confirmacion label {
+    color:
+        var(--texto-3);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+
+.juego-eliminar__confirmacion input {
+    width: 100%;
+    min-height: 38px;
+
+    padding: 0 11px;
+
+    border:
+        1px solid
+        rgba(255, 109, 114, .20);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background:
+        var(--panel-2);
+
+    color:
+        var(--texto);
+
+    font: inherit;
+    font-size: 11px;
+}
+
+
+.juego-eliminar__confirmacion input:focus {
+    border-color:
+        rgba(255, 109, 114, .50);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 109, 114, .07);
+}
+
+
+.juego-eliminar__estado {
+    min-height: 18px;
+    margin: 0;
+
+    color:
+        var(--texto-3);
+
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+
+.juego-eliminar__estado--ok {
+    color:
+        #86efac;
+}
+
+
+.juego-eliminar__estado--aviso {
+    color:
+        #fde68a;
+}
+
+
+.juego-eliminar__estado--error {
+    color:
+        #fca5a5;
+}
+
+
+.juego-eliminar__acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+
+.juego-eliminar__cancelar {
+    min-height: 36px;
+    padding: 0 12px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .15);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        var(--texto-2);
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+@media (max-width: 680px) {
+
+    .juego-detalle__peligro {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .juego-detalle__eliminar {
+        width: 100%;
+    }
+
+
+    .juego-eliminar__resumen {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .juego-eliminar__resumen {
+        grid-template-columns: 1fr;
+    }
+
+
+    .juego-eliminar__acciones {
+        flex-direction: column-reverse;
+    }
+
+
+    .juego-eliminar__cancelar,
+    .juego-eliminar__ejecutar {
+        width: 100%;
+    }
+
+}

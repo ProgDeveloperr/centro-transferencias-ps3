@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "root": "/dev_hdd0/game",
+  "registros_exactos": {
+    "SISTEMA_PROTEGIDO": [
+      "PS3XPLOIT"
+    ],
+    "SOPORTE_PS2": [
+      "PS2CONFIG",
+      "PS2L00123",
+      "PS2U10000"
+    ],
+    "HOMEBREW_UTILIDAD": [
+      "BLES80608",
+      "BLES80616",
+      "NP00PKGI3",
+      "PKGLAUNCH",
+      "PUHS00000",
+      "RELOADXMB",
+      "XMBMANPLS"
+    ],
+    "STORE_APLICACION": [
+      "BLACK0STR",
+      "GOLDSTORE",
+      "MAXISTORE",
+      "ONLINESTR",
+      "SOCCERPS3",
+      "YOUGSTORE",
+      "ZUKOSTORE"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+.ops-frescura {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 6px;
+    padding: 3px 7px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    overflow-wrap: anywhere;
+}
+
+.ops-frescura--actualizado {
+    color: #66dfa9;
+    background: rgba(45, 190, 125, 0.10);
+    border-color: rgba(45, 190, 125, 0.18);
+}
+
+.ops-frescura--antiguo {
+    color: #f0c66c;
+    background: rgba(230, 168, 44, 0.10);
+    border-color: rgba(230, 168, 44, 0.18);
+}
+
+.ops-frescura--no-disponible {
+    color: #ff9f9f;
+    background: rgba(225, 79, 79, 0.08);
+    border-color: rgba(225, 79, 79, 0.15);
+}
+
+.ops-frescura--neutral {
+    color: inherit;
+    background: rgba(148, 163, 184, 0.07);
+    border-color: rgba(148, 163, 184, 0.12);
+    opacity: 0.72;
+}
+
+#opsFrescuraResumenHdd,
+#opsFrescuraAlmHdd {
+    display: flex;
+}
+
+#opsFrescuraInventario {
+    margin-left: 8px;
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    #opsFrescuraInventario {
+        margin-left: 0;
+        margin-top: 6px;
+    }
+}

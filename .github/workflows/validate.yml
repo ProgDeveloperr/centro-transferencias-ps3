@@ -1,0 +1,93 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: PHP, Python, JavaScript and schema
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate PHP syntax
+        shell: bash
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/workspace:ro" \
+            -w /workspace \
+            php:8.2-cli \
+            sh -lc '
+              find app -type f -name "*.php" -print0 \
+                | xargs -0 -r -n1 php -l
+            '
+
+      - name: Validate Python syntax
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          files = sorted(Path(".").rglob("*.py"))
+
+          for path in files:
+              compile(
+                  path.read_text(encoding="utf-8"),
+                  str(path),
+                  "exec"
+              )
+
+          print(f"Python files validated: {len(files)}")
+          PY
+
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/workspace:ro" \
+            -w /workspace \
+            node:22-alpine \
+            sh -lc '
+              find app -type f -name "*.js" -print0 \
+                | xargs -0 -r -n1 node --check
+            '
+
+      - name: Validate shell syntax
+        shell: bash
+        run: |
+          find tools -type f -name "*.sh" -print0 \
+            | xargs -0 -r -n1 bash -n
+
+      - name: Validate JSON and SQLite schema
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import sqlite3
+
+          for path in Path(".").rglob("*.json"):
+              json.loads(path.read_text(encoding="utf-8"))
+
+          schema = Path("database/schema.sql").read_text(
+              encoding="utf-8"
+          )
+
+          con = sqlite3.connect(":memory:")
+          con.executescript(schema)
+          con.close()
+
+          print("JSON and SQLite schema validation passed.")
+          PY

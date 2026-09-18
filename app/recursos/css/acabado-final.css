@@ -1,0 +1,3129 @@
+/*
+ * =========================================================
+ * CTPS3 · ETAPA 10C
+ * ACABADO VISUAL FINAL
+ *
+ * Esta hoja actúa exclusivamente como capa de presentación.
+ * No contiene ni altera lógica funcional.
+ * =========================================================
+ */
+
+
+/* =========================================================
+   1. FUNDAMENTOS VISUALES
+   ========================================================= */
+
+:root {
+    --ctps3-superficie:
+        rgba(17, 23, 32, .88);
+
+    --ctps3-superficie-elevada:
+        rgba(20, 27, 38, .94);
+
+    --ctps3-linea:
+        rgba(148, 163, 184, .105);
+
+    --ctps3-linea-activa:
+        rgba(97, 212, 139, .22);
+
+    --ctps3-resplandor:
+        rgba(97, 212, 139, .055);
+
+    --ctps3-sombra-panel:
+        0 12px 32px
+        rgba(0, 0, 0, .18);
+
+    --ctps3-sombra-elevada:
+        0 20px 55px
+        rgba(0, 0, 0, .24);
+}
+
+
+html {
+    scroll-behavior:
+        smooth;
+}
+
+
+body {
+    background:
+        radial-gradient(
+            circle at 74% -12%,
+            rgba(97, 212, 139, .075),
+            transparent 31rem
+        ),
+        radial-gradient(
+            circle at 5% 42%,
+            rgba(99, 168, 255, .026),
+            transparent 31rem
+        ),
+        var(--fondo);
+}
+
+
+/* =========================================================
+   2. CABECERA
+   ========================================================= */
+
+.cabecera {
+    position:
+        relative;
+
+    z-index:
+        30;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, .08);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(14, 19, 27, .97),
+            rgba(8, 11, 16, .92)
+        );
+
+    backdrop-filter:
+        blur(22px);
+}
+
+
+.cabecera__interior {
+    min-height:
+        88px;
+}
+
+
+.marca__icono {
+    position:
+        relative;
+
+    border-color:
+        rgba(97, 212, 139, .32);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(97, 212, 139, .18),
+            rgba(97, 212, 139, .035)
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.035),
+        0 8px 25px
+        rgba(0,0,0,.18);
+}
+
+
+.marca__icono::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -1px;
+
+    z-index:
+        -1;
+
+    border-radius:
+        inherit;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(97,212,139,.12),
+            transparent 55%
+        );
+
+    filter:
+        blur(7px);
+
+    opacity:
+        .45;
+}
+
+
+.marca__eyebrow {
+    margin-bottom:
+        4px;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        .17em;
+}
+
+
+.marca h1 {
+    font-weight:
+        760;
+}
+
+
+.estado-superior {
+    gap:
+        7px;
+}
+
+
+.estado-superior .estado {
+    min-height:
+        29px;
+
+    padding:
+        0 11px;
+
+    border-color:
+        rgba(148, 163, 184, .14);
+
+    background:
+        rgba(255,255,255,.018);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025);
+}
+
+
+/* =========================================================
+   3. NAVEGACION PRINCIPAL
+   ========================================================= */
+
+.navegacion-ctps3 {
+    box-shadow:
+        0 10px 28px
+        rgba(0, 0, 0, .16);
+
+    background:
+        rgba(8, 12, 17, .91);
+}
+
+
+.navegacion-ctps3__interior {
+    padding:
+        8px 0;
+}
+
+
+.navegacion-ctps3__item {
+    min-height:
+        48px;
+
+    border-radius:
+        10px;
+}
+
+
+.navegacion-ctps3__item::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    bottom:
+        5px;
+
+    left:
+        12px;
+
+    height:
+        1px;
+
+    border-radius:
+        999px;
+
+    background:
+        transparent;
+
+    transition:
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.navegacion-ctps3__item--activo {
+    border-color:
+        rgba(97, 212, 139, .20);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(97, 212, 139, .095),
+            rgba(97, 212, 139, .018)
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025);
+}
+
+
+.navegacion-ctps3__item--activo::after {
+    background:
+        rgba(97, 212, 139, .78);
+
+    box-shadow:
+        0 0 10px
+        rgba(97, 212, 139, .20);
+}
+
+
+.navegacion-ctps3__item:hover:not(
+    .navegacion-ctps3__item--activo
+) {
+    transform:
+        none;
+
+    border-color:
+        rgba(148, 163, 184, .12);
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+
+/* =========================================================
+   4. CONTENIDO Y CABECERA DE VISTA
+   ========================================================= */
+
+.contenedor {
+    margin-top:
+        24px;
+
+    margin-bottom:
+        68px;
+}
+
+
+.vista-cabecera {
+    position:
+        relative;
+
+    margin:
+        0 0 22px;
+
+    padding:
+        4px 0 14px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, .085);
+}
+
+
+.vista-cabecera::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -1px;
+
+    width:
+        64px;
+
+    height:
+        1px;
+
+    background:
+        var(--primario);
+
+    box-shadow:
+        0 0 12px
+        rgba(97, 212, 139, .18);
+}
+
+
+.vista-cabecera .subtitulo {
+    margin-bottom:
+        5px;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .18em;
+
+    opacity:
+        .9;
+}
+
+
+.vista-cabecera h2 {
+    margin-bottom:
+        6px;
+
+    font-size:
+        clamp(
+            23px,
+            2.5vw,
+            30px
+        );
+
+    font-weight:
+        760;
+}
+
+
+.vista-cabecera p {
+    color:
+        #7f8da1;
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   5. PANELES
+   ========================================================= */
+
+.panel,
+.ps3-resumen,
+.metrica {
+    border-color:
+        var(--ctps3-linea);
+
+    box-shadow:
+        var(--ctps3-sombra-panel);
+}
+
+
+.panel {
+    position:
+        relative;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.015),
+            transparent 45%
+        ),
+        var(--ctps3-superficie);
+}
+
+
+.panel::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    right:
+        18px;
+
+    left:
+        18px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.055),
+            transparent
+        );
+
+    pointer-events:
+        none;
+}
+
+
+.panel__cabecera {
+    margin-bottom:
+        18px;
+}
+
+
+.panel__cabecera h2 {
+    font-size:
+        20px;
+
+    font-weight:
+        730;
+}
+
+
+.panel__cabecera p {
+    line-height:
+        1.5;
+}
+
+
+.subtitulo {
+    font-size:
+        9px;
+
+    letter-spacing:
+        .16em;
+}
+
+
+/* =========================================================
+   6. METRICAS GENERALES
+   ========================================================= */
+
+.metricas {
+    gap:
+        11px;
+
+    margin-bottom:
+        17px;
+}
+
+
+.metrica {
+    position:
+        relative;
+
+    padding:
+        17px 18px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.018),
+            transparent 65%
+        ),
+        rgba(17, 23, 32, .84);
+
+    transition:
+        border-color .16s ease,
+        transform .16s ease,
+        background .16s ease;
+}
+
+
+.metrica::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        2px;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(97,212,139,.38),
+            transparent
+        );
+
+    opacity:
+        .42;
+}
+
+
+.metrica:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(148,163,184,.16);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            transparent 65%
+        ),
+        rgba(18, 25, 35, .88);
+}
+
+
+.metrica__etiqueta {
+    margin-bottom:
+        7px;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        .1em;
+}
+
+
+.metrica__valor {
+    font-size:
+        clamp(
+            22px,
+            2.6vw,
+            29px
+        );
+
+    font-weight:
+        720;
+}
+
+
+.metrica__detalle {
+    margin-top:
+        5px;
+
+    font-size:
+        10px;
+}
+
+
+/* =========================================================
+   7. ESTADO PS3
+   ========================================================= */
+
+.ps3-resumen {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        16px 18px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(99,168,255,.04),
+            transparent 40%
+        ),
+        rgba(17, 23, 32, .88);
+}
+
+
+.ps3-resumen::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -80px;
+
+    left:
+        -70px;
+
+    width:
+        190px;
+
+    height:
+        190px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(99,168,255,.035);
+
+    filter:
+        blur(20px);
+
+    pointer-events:
+        none;
+}
+
+
+.ps3-resumen__principal,
+.ps3-resumen__datos,
+.ps3-resumen__error {
+    position:
+        relative;
+
+    z-index:
+        1;
+}
+
+
+/* =========================================================
+   8. BIBLIOTECA
+   ========================================================= */
+
+.juego,
+.inventario-ps3 {
+    border-color:
+        rgba(148, 163, 184, .10);
+
+    background:
+        rgba(11, 16, 23, .66);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.015);
+}
+
+
+.juego {
+    transition:
+        border-color .16s ease,
+        background .16s ease;
+}
+
+
+.juego:hover {
+    border-color:
+        rgba(148, 163, 184, .17);
+
+    background:
+        rgba(13, 18, 26, .82);
+}
+
+
+.juego__cabecera {
+    padding:
+        15px 17px;
+
+    background:
+        rgba(255,255,255,.009);
+}
+
+
+.archivo {
+    padding:
+        12px 17px;
+
+    transition:
+        background .12s ease;
+}
+
+
+.archivo:hover {
+    background:
+        rgba(255,255,255,.022);
+}
+
+
+/* =========================================================
+   9. TRANSFERENCIAS
+   ========================================================= */
+
+.transferencia {
+    border-color:
+        rgba(148, 163, 184, .105);
+
+    background:
+        rgba(11, 16, 23, .68);
+
+    transition:
+        border-color .16s ease,
+        background .16s ease;
+}
+
+
+.transferencia:hover {
+    border-color:
+        rgba(148, 163, 184, .17);
+
+    background:
+        rgba(13, 18, 26, .84);
+}
+
+
+.progreso {
+    height:
+        6px;
+
+    background:
+        rgba(148,163,184,.105);
+}
+
+
+.progreso__barra {
+    box-shadow:
+        0 0 10px
+        rgba(97,212,139,.13);
+}
+
+
+/* =========================================================
+   10. BOTONES
+   ========================================================= */
+
+.boton {
+    min-height:
+        38px;
+
+    border-radius:
+        9px;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025);
+}
+
+
+.boton--primario {
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.18),
+        0 8px 18px
+        rgba(97,212,139,.08);
+}
+
+
+.boton--secundario {
+    border-color:
+        rgba(148,163,184,.14);
+
+    background:
+        rgba(20, 27, 38, .84);
+}
+
+
+.boton--secundario:hover:not(:disabled) {
+    border-color:
+        rgba(148,163,184,.23);
+
+    background:
+        rgba(24, 32, 45, .95);
+}
+
+
+/* =========================================================
+   11. HISTORIAL Y EVENTOS
+   ========================================================= */
+
+.historial-stat-v4,
+.cola-profesional__dato {
+    border-color:
+        rgba(148,163,184,.105);
+
+    background:
+        rgba(11,16,23,.64);
+}
+
+
+.evento {
+    padding:
+        10px 2px;
+
+    border-bottom-color:
+        rgba(148,163,184,.08);
+}
+
+
+.evento__tipo {
+    font-weight:
+        750;
+
+    letter-spacing:
+        .025em;
+}
+
+
+/* =========================================================
+   12. TELEMETRIA Y RESILIENCIA
+   ========================================================= */
+
+.telemetria-ftp__metrica,
+.resiliencia-panel__metrica {
+    border-color:
+        rgba(148,163,184,.105);
+
+    background:
+        rgba(11,16,23,.54);
+}
+
+
+.telemetria-ftp__subpanel,
+.resiliencia-panel__subpanel {
+    border-color:
+        rgba(148,163,184,.105);
+
+    background:
+        rgba(10,15,22,.42);
+}
+
+
+.telemetria-ftp__chip {
+    border-color:
+        rgba(148,163,184,.11);
+
+    background:
+        rgba(255,255,255,.012);
+}
+
+
+/* =========================================================
+   13. COLOR SUTIL SEGUN VISTA
+   ========================================================= */
+
+body[data-vista="resumen"] {
+    --ctps3-acento-vista:
+        var(--primario);
+}
+
+
+body[data-vista="biblioteca"] {
+    --ctps3-acento-vista:
+        #63a8ff;
+}
+
+
+body[data-vista="transferencias"] {
+    --ctps3-acento-vista:
+        #7fd7a0;
+}
+
+
+body[data-vista="historial"] {
+    --ctps3-acento-vista:
+        #9ca9bb;
+}
+
+
+body[data-vista="sistema"] {
+    --ctps3-acento-vista:
+        #73b5ff;
+}
+
+
+body[data-vista]
+.vista-cabecera::after {
+    background:
+        var(
+            --ctps3-acento-vista,
+            var(--primario)
+        );
+}
+
+
+/* =========================================================
+   14. SELECCION DE TEXTO Y SCROLLBAR
+   ========================================================= */
+
+::selection {
+    background:
+        rgba(97,212,139,.24);
+
+    color:
+        var(--texto);
+}
+
+
+@supports selector(::-webkit-scrollbar) {
+
+    ::-webkit-scrollbar {
+        width:
+            10px;
+
+        height:
+            10px;
+    }
+
+
+    ::-webkit-scrollbar-track {
+        background:
+            #080b10;
+    }
+
+
+    ::-webkit-scrollbar-thumb {
+        border:
+            3px solid #080b10;
+
+        border-radius:
+            999px;
+
+        background:
+            #283342;
+    }
+
+
+    ::-webkit-scrollbar-thumb:hover {
+        background:
+            #354255;
+    }
+}
+
+
+/* =========================================================
+   15. RESPONSIVE FINAL
+   ========================================================= */
+
+@media (min-width: 1500px) {
+
+    .cabecera__interior,
+    .contenedor,
+    .navegacion-ctps3__interior {
+        width:
+            min(
+                1480px,
+                calc(100% - 48px)
+            );
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .contenedor {
+        margin-top:
+            20px;
+    }
+
+
+    .vista-cabecera {
+        margin-bottom:
+            17px;
+    }
+
+
+    .panel {
+        padding:
+            19px;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .cabecera__interior {
+        min-height:
+            68px;
+    }
+
+
+    .contenedor {
+        margin-top:
+            17px;
+
+        margin-bottom:
+            42px;
+    }
+
+
+    .vista-cabecera {
+        padding-bottom:
+            11px;
+    }
+
+
+    .vista-cabecera h2 {
+        font-size:
+            22px;
+    }
+
+
+    .vista-cabecera p {
+        font-size:
+            11px;
+    }
+
+
+    .panel {
+        margin-bottom:
+            12px;
+
+        padding:
+            15px;
+
+        border-radius:
+            13px;
+    }
+
+
+    .metrica {
+        padding:
+            14px;
+    }
+
+
+    .metrica__valor {
+        font-size:
+            21px;
+    }
+
+
+    .ps3-resumen {
+        padding:
+            14px;
+    }
+}
+
+
+/* =========================================================
+   16. ACCESIBILIDAD
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline:
+        2px solid
+        rgba(97,212,139,.72);
+
+    outline-offset:
+        2px;
+}
+
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+}
+
+
+/*
+ * =========================================================
+ * CTPS3 · ETAPA 10D
+ * FIRMA VISUAL PREMIUM
+ *
+ * Capa final sobre 10C.
+ * Cero cambios funcionales.
+ * =========================================================
+ */
+
+
+/* =========================================================
+   A. ATMOSFERA GENERAL
+   ========================================================= */
+
+body {
+    position:
+        relative;
+
+    isolation:
+        isolate;
+}
+
+
+body::before {
+    content:
+        "";
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -2;
+
+    pointer-events:
+        none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.011) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.011) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        48px 48px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.55),
+            transparent 68%
+        );
+
+    opacity:
+        .48;
+}
+
+
+body::after {
+    content:
+        "";
+
+    position:
+        fixed;
+
+    z-index:
+        -1;
+
+    top:
+        80px;
+
+    right:
+        -170px;
+
+    width:
+        520px;
+
+    height:
+        520px;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(
+                    --ctps3-acento-vista,
+                    var(--primario)
+                ) 12%,
+                transparent
+            ),
+            transparent 68%
+        );
+
+    filter:
+        blur(10px);
+
+    opacity:
+        .62;
+}
+
+
+/* =========================================================
+   B. CABECERA PRINCIPAL
+   ========================================================= */
+
+.cabecera {
+    overflow:
+        hidden;
+}
+
+
+.cabecera::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(97,212,139,.035),
+            transparent 35%,
+            transparent 70%,
+            rgba(99,168,255,.018)
+        );
+}
+
+
+.cabecera__interior {
+    position:
+        relative;
+
+    z-index:
+        1;
+}
+
+
+.marca {
+    position:
+        relative;
+}
+
+
+.marca::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        62px;
+
+    bottom:
+        -9px;
+
+    width:
+        42px;
+
+    height:
+        1px;
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primario),
+            transparent
+        );
+
+    opacity:
+        .55;
+}
+
+
+.marca h1 {
+    text-shadow:
+        0 5px 22px
+        rgba(0,0,0,.28);
+}
+
+
+/* =========================================================
+   C. NAVEGACION PREMIUM
+   ========================================================= */
+
+.navegacion-ctps3 {
+    border-bottom-color:
+        rgba(148,163,184,.075);
+
+    background:
+        rgba(8, 12, 17, .86);
+
+    backdrop-filter:
+        blur(24px)
+        saturate(125%);
+}
+
+
+.navegacion-ctps3__item {
+    overflow:
+        hidden;
+}
+
+
+.navegacion-ctps3__item::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+        radial-gradient(
+            circle at 25% 0%,
+            rgba(255,255,255,.035),
+            transparent 55%
+        );
+
+    opacity:
+        0;
+
+    transition:
+        opacity .18s ease;
+}
+
+
+.navegacion-ctps3__item:hover::before,
+.navegacion-ctps3__item--activo::before {
+    opacity:
+        1;
+}
+
+
+.navegacion-ctps3__item--activo {
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.035),
+        0 7px 18px
+        rgba(0,0,0,.13);
+}
+
+
+.navegacion-ctps3__item--activo
+.navegacion-ctps3__texto strong {
+    text-shadow:
+        0 0 14px
+        rgba(97,212,139,.13);
+}
+
+
+/* =========================================================
+   D. HERO DE CADA VISTA
+   ========================================================= */
+
+.vista-cabecera {
+    overflow:
+        hidden;
+
+    min-height:
+        118px;
+
+    padding:
+        21px 23px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    border:
+        1px solid
+        rgba(148,163,184,.095);
+
+    border-radius:
+        16px;
+
+    background:
+        linear-gradient(
+            112deg,
+            color-mix(
+                in srgb,
+                var(
+                    --ctps3-acento-vista,
+                    var(--primario)
+                ) 8%,
+                transparent
+            ),
+            rgba(17,23,32,.72) 32%,
+            rgba(13,18,26,.52)
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025),
+        0 15px 36px
+        rgba(0,0,0,.16);
+}
+
+
+.vista-cabecera::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        -36px;
+
+    top:
+        -90px;
+
+    width:
+        280px;
+
+    height:
+        280px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(
+                    --ctps3-acento-vista,
+                    var(--primario)
+                ) 13%,
+                transparent
+            ),
+            transparent 66%
+        );
+
+    pointer-events:
+        none;
+}
+
+
+.vista-cabecera::after {
+    left:
+        23px;
+
+    bottom:
+        0;
+
+    width:
+        72px;
+
+    height:
+        2px;
+}
+
+
+.vista-cabecera > div {
+    position:
+        relative;
+
+    z-index:
+        1;
+}
+
+
+.vista-cabecera h2 {
+    font-size:
+        clamp(
+            26px,
+            3vw,
+            34px
+        );
+
+    line-height:
+        1.05;
+}
+
+
+.vista-cabecera p {
+    max-width:
+        680px;
+
+    font-size:
+        12px;
+
+    color:
+        #8996a8;
+}
+
+
+/* =========================================================
+   E. PANELES DE NIVEL PRODUCTO
+   ========================================================= */
+
+.panel {
+    overflow:
+        hidden;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+}
+
+
+.panel::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        inherit;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,.018),
+            transparent 30%
+        );
+
+    opacity:
+        .8;
+}
+
+
+.panel > * {
+    position:
+        relative;
+
+    z-index:
+        1;
+}
+
+
+@media (hover: hover) {
+
+    .panel:hover {
+        border-color:
+            rgba(148,163,184,.145);
+
+        box-shadow:
+            0 18px 44px
+            rgba(0,0,0,.21);
+
+        transform:
+            translateY(-1px);
+    }
+}
+
+
+/* =========================================================
+   F. TITULOS DE PANEL
+   ========================================================= */
+
+.panel__cabecera {
+    position:
+        relative;
+
+    padding-bottom:
+        13px;
+
+    border-bottom:
+        1px solid
+        rgba(148,163,184,.075);
+}
+
+
+.panel__cabecera::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -1px;
+
+    width:
+        38px;
+
+    height:
+        1px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(
+                --ctps3-acento-vista,
+                var(--primario)
+            ) 75%,
+            transparent
+        );
+}
+
+
+.panel__cabecera h2 {
+    margin-bottom:
+        5px;
+}
+
+
+/* =========================================================
+   G. METRICAS PREMIUM
+   ========================================================= */
+
+.metrica {
+    min-height:
+        120px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+}
+
+
+.metrica::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        -26px;
+
+    top:
+        -26px;
+
+    width:
+        84px;
+
+    height:
+        84px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(
+                    --ctps3-acento-vista,
+                    var(--primario)
+                ) 9%,
+                transparent
+            ),
+            transparent 70%
+        );
+}
+
+
+.metrica__valor {
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    letter-spacing:
+        -.045em;
+
+    text-shadow:
+        0 7px 22px
+        rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   H. ESTADOS
+   ========================================================= */
+
+.estado {
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.estado--ok {
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025),
+        0 0 18px
+        rgba(97,212,139,.045);
+}
+
+
+.estado--error {
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025),
+        0 0 18px
+        rgba(255,109,114,.045);
+}
+
+
+/* =========================================================
+   I. PS3 RESUMEN
+   ========================================================= */
+
+.ps3-resumen {
+    min-height:
+        105px;
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.ps3-pulso--ok {
+    animation:
+        ctps3PulsoOk 3.2s
+        ease-in-out infinite;
+}
+
+
+@keyframes ctps3PulsoOk {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 5px
+            rgba(97,212,139,.08),
+            0 0 16px
+            rgba(97,212,139,.20);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 7px
+            rgba(97,212,139,.035),
+            0 0 24px
+            rgba(97,212,139,.27);
+    }
+}
+
+
+/* =========================================================
+   J. BIBLIOTECA
+   ========================================================= */
+
+.juego {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.juego::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(99,168,255,.35),
+            transparent
+        );
+
+    opacity:
+        .7;
+}
+
+
+.juego__titulo {
+    letter-spacing:
+        -.015em;
+}
+
+
+.juego__codigo {
+    opacity:
+        .82;
+}
+
+
+.archivo__nombre {
+    transition:
+        color .12s ease;
+}
+
+
+.archivo:hover
+.archivo__nombre {
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   K. TRANSFERENCIAS
+   ========================================================= */
+
+.transferencia {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.transferencia::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        14px;
+
+    bottom:
+        14px;
+
+    width:
+        2px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(99,168,255,.30);
+}
+
+
+.transferencia__titulo {
+    font-weight:
+        750;
+}
+
+
+.progreso {
+    overflow:
+        visible;
+
+    position:
+        relative;
+}
+
+
+.progreso__barra {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.progreso__barra::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(255,255,255,.20),
+            transparent
+        );
+
+    transform:
+        translateX(-100%);
+
+    animation:
+        ctps3ProgresoLuz
+        2.6s ease-in-out infinite;
+}
+
+
+@keyframes ctps3ProgresoLuz {
+
+    0%,
+    55% {
+        transform:
+            translateX(-110%);
+    }
+
+    100% {
+        transform:
+            translateX(110%);
+    }
+}
+
+
+/* =========================================================
+   L. BOTONES
+   ========================================================= */
+
+.boton {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.boton::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -80%;
+
+    width:
+        45%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(255,255,255,.055),
+            transparent
+        );
+
+    transition:
+        left .35s ease;
+}
+
+
+.boton:hover:not(:disabled)::after {
+    left:
+        125%;
+}
+
+
+/* =========================================================
+   M. COLA PROFESIONAL
+   ========================================================= */
+
+.cola-profesional {
+    gap:
+        8px;
+}
+
+
+.cola-profesional__dato {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        70px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    transition:
+        border-color .15s ease,
+        background .15s ease;
+}
+
+
+.cola-profesional__dato::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        -20px;
+
+    bottom:
+        -24px;
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(97,212,139,.025);
+}
+
+
+.cola-profesional__dato:hover {
+    border-color:
+        rgba(148,163,184,.16);
+
+    background:
+        rgba(14,20,28,.78);
+}
+
+
+/* =========================================================
+   N. HISTORIAL
+   ========================================================= */
+
+.historial-stat-v4 {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        76px;
+}
+
+
+.historial-stat-v4::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        0;
+
+    width:
+        1px;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(148,163,184,.14),
+            transparent
+        );
+}
+
+
+.historial-filtros-v4 {
+    border-color:
+        rgba(148,163,184,.10);
+
+    background:
+        rgba(10,15,22,.58);
+}
+
+
+/* =========================================================
+   O. SISTEMA · TELEMETRIA
+   ========================================================= */
+
+.telemetria-ftp {
+    background:
+        linear-gradient(
+            125deg,
+            rgba(99,168,255,.025),
+            transparent 38%
+        ),
+        var(--ctps3-superficie);
+}
+
+
+.telemetria-ftp__periodo {
+    background:
+        rgba(10,15,22,.56);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.telemetria-ftp__metrica {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    transition:
+        border-color .15s ease,
+        transform .15s ease;
+}
+
+
+.telemetria-ftp__metrica::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(99,168,255,.24),
+            transparent
+        );
+}
+
+
+@media (hover: hover) {
+
+    .telemetria-ftp__metrica:hover {
+        transform:
+            translateY(-1px);
+
+        border-color:
+            rgba(99,168,255,.17);
+    }
+}
+
+
+/* =========================================================
+   P. SISTEMA · RESILIENCIA
+   ========================================================= */
+
+.resiliencia-panel {
+    background:
+        linear-gradient(
+            125deg,
+            rgba(97,212,139,.024),
+            transparent 38%
+        ),
+        var(--ctps3-superficie);
+}
+
+
+.resiliencia-panel__estado-general {
+    background:
+        rgba(10,15,22,.60);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.resiliencia-panel__metrica {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.resiliencia-panel__metrica::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(97,212,139,.20),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   Q. SUBPANELES TECNICOS
+   ========================================================= */
+
+.telemetria-ftp__subpanel,
+.resiliencia-panel__subpanel,
+.historial-juegos-v4 {
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.018);
+}
+
+
+.telemetria-ftp__subcabecera,
+.resiliencia-panel__subcabecera,
+.historial-juegos-v4__cabecera {
+    background:
+        rgba(255,255,255,.010);
+}
+
+
+/* =========================================================
+   R. MODAL
+   ========================================================= */
+
+.modal__fondo {
+    background:
+        rgba(3,5,8,.78);
+
+    backdrop-filter:
+        blur(9px);
+}
+
+
+.modal__tarjeta {
+    border-color:
+        rgba(148,163,184,.18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.022),
+            transparent 45%
+        ),
+        rgba(17,23,32,.98);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.45),
+        inset 0 1px 0
+        rgba(255,255,255,.03);
+}
+
+
+/* =========================================================
+   S. TOASTS
+   ========================================================= */
+
+.toast {
+    border-color:
+        rgba(148,163,184,.15);
+
+    background:
+        rgba(20,27,38,.93);
+
+    backdrop-filter:
+        blur(14px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   T. ENTRADA DE CONTENIDO
+   ========================================================= */
+
+@media (
+    prefers-reduced-motion:
+    no-preference
+) {
+
+    .vista-cabecera {
+        animation:
+            ctps3EntradaHero
+            .35s ease-out both;
+    }
+
+
+    main.contenedor > .panel,
+    main.contenedor > .ps3-resumen,
+    main.contenedor > .metricas {
+        animation:
+            ctps3EntradaPanel
+            .34s ease-out both;
+    }
+
+
+    main.contenedor
+    > :nth-child(3) {
+        animation-delay:
+            .035s;
+    }
+
+
+    main.contenedor
+    > :nth-child(4) {
+        animation-delay:
+            .07s;
+    }
+
+
+    main.contenedor
+    > :nth-child(5) {
+        animation-delay:
+            .105s;
+    }
+
+
+    @keyframes ctps3EntradaHero {
+
+        from {
+            opacity:
+                0;
+
+            transform:
+                translateY(5px);
+        }
+
+        to {
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+        }
+    }
+
+
+    @keyframes ctps3EntradaPanel {
+
+        from {
+            opacity:
+                0;
+
+            transform:
+                translateY(6px);
+        }
+
+        to {
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+        }
+    }
+}
+
+
+/* =========================================================
+   U. RESPONSIVE PREMIUM
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .vista-cabecera {
+        min-height:
+            104px;
+
+        padding:
+            18px 19px;
+    }
+
+
+    .vista-cabecera::after {
+        left:
+            19px;
+    }
+
+
+    .metrica {
+        min-height:
+            108px;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    body::before {
+        background-size:
+            36px 36px;
+
+        opacity:
+            .25;
+    }
+
+
+    .vista-cabecera {
+        min-height:
+            auto;
+
+        padding:
+            16px;
+
+        border-radius:
+            13px;
+    }
+
+
+    .vista-cabecera::after {
+        left:
+            16px;
+
+        width:
+            50px;
+    }
+
+
+    .vista-cabecera h2 {
+        font-size:
+            23px;
+    }
+
+
+    .metrica {
+        min-height:
+            94px;
+    }
+
+
+    .marca::after {
+        display:
+            none;
+    }
+}
+
+
+/* =========================================================
+   V. MOTION REDUCIDO
+   ========================================================= */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    .ps3-pulso--ok,
+    .progreso__barra::after {
+        animation:
+            none !important;
+    }
+
+
+    .panel,
+    .metrica,
+    .boton,
+    .telemetria-ftp__metrica {
+        transform:
+            none !important;
+    }
+}
+
+
+/* =========================================================
+   CTPS3 11C - ESTILOS GESTOR PKG
+   ========================================================= */
+
+.gestor-pkg {
+    overflow:
+        hidden;
+}
+
+
+.gestor-pkg__cabecera {
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin-bottom:
+        14px;
+}
+
+
+.gestor-pkg__cabecera-texto h3 {
+    margin:
+        4px 0 0;
+
+    font-size:
+        21px;
+}
+
+
+.gestor-pkg__cabecera-lado {
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+}
+
+
+.gestor-pkg__resumen {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        var(--texto-secundario, #94a3b8);
+
+    font-size:
+        13px;
+
+    white-space:
+        nowrap;
+}
+
+
+.gestor-pkg__resumen strong {
+    color:
+        var(--texto, #f1f5f9);
+
+    font-weight:
+        700;
+}
+
+
+.gestor-pkg__separador {
+    opacity:
+        .45;
+}
+
+
+.gestor-pkg__estado {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    min-height:
+        26px;
+
+    padding:
+        4px 9px;
+
+    border:
+        1px solid
+        rgba(148,163,184,.15);
+
+    border-radius:
+        999px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .045em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.gestor-pkg__estado--ok {
+    border-color:
+        rgba(74,222,128,.22);
+
+    background:
+        rgba(74,222,128,.07);
+
+    color:
+        #86efac;
+}
+
+
+.gestor-pkg__estado--off {
+    background:
+        rgba(148,163,184,.06);
+
+    color:
+        #94a3b8;
+}
+
+
+.gestor-pkg__aviso {
+    margin:
+        0 0 18px;
+
+    padding:
+        11px 13px;
+
+    border:
+        1px solid
+        rgba(148,163,184,.11);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.012);
+
+    color:
+        var(--texto-secundario, #94a3b8);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.55;
+}
+
+
+.gestor-pkg__grupos {
+    display:
+        grid;
+
+    gap:
+        12px;
+}
+
+
+.gestor-pkg__grupo {
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(148,163,184,.12);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255,255,255,.012);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.018);
+}
+
+
+.gestor-pkg__grupo-cabecera {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        14px;
+
+    min-height:
+        58px;
+
+    padding:
+        11px 14px;
+
+    border-bottom:
+        1px solid
+        rgba(148,163,184,.09);
+
+    background:
+        rgba(255,255,255,.009);
+}
+
+
+.gestor-pkg__grupo-titulo {
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+}
+
+
+.gestor-pkg__grupo-titulo strong {
+    overflow:
+        hidden;
+
+    color:
+        var(--texto, #f1f5f9);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.gestor-pkg__grupo-titulo span {
+    color:
+        var(--texto-secundario, #94a3b8);
+
+    font-size:
+        11px;
+}
+
+
+.gestor-pkg__badge {
+    flex:
+        0 0 auto;
+
+    padding:
+        4px 7px;
+
+    border:
+        1px solid
+        rgba(96,165,250,.18);
+
+    border-radius:
+        7px;
+
+    background:
+        rgba(96,165,250,.06);
+
+    color:
+        #93c5fd;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.gestor-pkg__lista {
+    display:
+        grid;
+}
+
+
+.gestor-pkg__archivo {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    min-height:
+        58px;
+
+    padding:
+        9px 14px;
+
+    border-bottom:
+        1px solid
+        rgba(148,163,184,.075);
+}
+
+
+.gestor-pkg__archivo:last-child {
+    border-bottom:
+        0;
+}
+
+
+.gestor-pkg__archivo-info {
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+}
+
+
+.gestor-pkg__archivo-titulo {
+    color:
+        var(--texto, #f1f5f9);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+}
+
+
+.gestor-pkg__archivo-nombre {
+    overflow:
+        hidden;
+
+    max-width:
+        720px;
+
+    color:
+        var(--texto-secundario, #94a3b8);
+
+    font-size:
+        10px;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.gestor-pkg__archivo-lateral {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        14px;
+}
+
+
+.gestor-pkg__tamano {
+    min-width:
+        72px;
+
+    color:
+        var(--texto-secundario, #94a3b8);
+
+    font-size:
+        11px;
+
+    font-variant-numeric:
+        tabular-nums;
+
+    text-align:
+        right;
+}
+
+
+.gestor-pkg__acciones {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+}
+
+
+.gestor-pkg__operacion {
+    min-width:
+        145px;
+
+    padding:
+        6px 9px;
+
+    border:
+        1px solid
+        rgba(96,165,250,.16);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(96,165,250,.055);
+
+    color:
+        #93c5fd;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    text-align:
+        center;
+}
+
+
+.gestor-pkg
+.boton[disabled] {
+    cursor:
+        not-allowed;
+
+    opacity:
+        .38;
+}
+
+
+@media (max-width: 760px) {
+
+    .gestor-pkg__cabecera {
+        flex-direction:
+            column;
+    }
+
+
+    .gestor-pkg__cabecera-lado {
+        align-items:
+            flex-start;
+    }
+
+
+    .gestor-pkg__archivo {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            9px;
+    }
+
+
+    .gestor-pkg__archivo-lateral {
+        justify-content:
+            space-between;
+    }
+
+
+    .gestor-pkg__tamano {
+        min-width:
+            auto;
+
+        text-align:
+            left;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .gestor-pkg__grupo-cabecera,
+    .gestor-pkg__archivo {
+        padding-left:
+            11px;
+
+        padding-right:
+            11px;
+    }
+
+
+    .gestor-pkg__archivo-lateral {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .gestor-pkg__acciones {
+        width:
+            100%;
+    }
+
+
+    .gestor-pkg__acciones
+    .boton {
+        flex:
+            1;
+    }
+
+
+    .gestor-pkg__operacion {
+        width:
+            100%;
+    }
+}
