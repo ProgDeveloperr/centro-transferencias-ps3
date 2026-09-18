@@ -1,0 +1,27 @@
+# Default repository owner
+* @ProgDeveloperr
+
+# GitHub automation
+/.github/ @ProgDeveloperr
+
+# Web application
+/app/ @ProgDeveloperr
+
+# Background worker
+/worker/ @ProgDeveloperr
+
+# Operational tools
+/tools/ @ProgDeveloperr
+
+# Database schema and configuration examples
+/database/ @ProgDeveloperr
+/config/ @ProgDeveloperr
+
+# systemd integration
+/systemd/ @ProgDeveloperr
+
+# Documentation
+/docs/ @ProgDeveloperr
+/README.md @ProgDeveloperr
+/SECURITY.md @ProgDeveloperr
+/CONTRIBUTING.md @ProgDeveloperr

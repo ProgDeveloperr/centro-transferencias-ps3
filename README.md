@@ -1,5 +1,7 @@
 # Centro Transferencias PS3
 
+[![Validate](https://github.com/ProgDeveloperr/centro-transferencias-ps3/actions/workflows/validate.yml/badge.svg)](https://github.com/ProgDeveloperr/centro-transferencias-ps3/actions/workflows/validate.yml)
+
 Centro Transferencias PS3 (CTPS3) es una aplicación web para administrar, observar y automatizar transferencias entre un servidor doméstico y una consola PlayStation 3 mediante una arquitectura desacoplada.
 
 El proyecto combina una interfaz PHP/JavaScript, una base SQLite, un worker Python, transporte FTP, herramientas de inventario y servicios systemd.
