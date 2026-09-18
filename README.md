@@ -6,6 +6,18 @@ Centro Transferencias PS3 (CTPS3) es una aplicación web para administrar, obser
 
 El proyecto combina una interfaz PHP/JavaScript, una base SQLite, un worker Python, transporte FTP, herramientas de inventario y servicios systemd.
 
+
+## Estado del proyecto
+
+**Estado:** funcional y utilizado en un entorno real de homelab.
+
+**Stack principal:** PHP 8.2, JavaScript, Python, SQLite, systemd, FTP/lftp y GitHub Actions.
+
+**Enfoque arquitectónico:** interfaz web desacoplada de la ejecución operativa mediante persistencia SQLite y un worker independiente.
+
+**Validación continua:** GitHub Actions verifica PHP, Python, JavaScript, shell, JSON y el schema SQLite en cada cambio dirigido a `main`.
+
+
 Esta versión del repositorio fue preparada específicamente para publicación: no contiene credenciales, direcciones privadas reales, bases productivas, registros, juegos, imágenes de disco, paquetes de instalación ni datos personales.
 
 ## Componentes
